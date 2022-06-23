@@ -882,4 +882,380 @@ Interface: 10.40.1.4 --- 0x6
   239.255.255.250       01-00-5e-7f-ff-fa     static
   255.255.255.255       ff-ff-ff-ff-ff-ff     static
 
-  
+
+
+
+  13.82.237.203 (az104-04-pip0)
+  40.117.154.113 (az104-04-pip1)
+
+
+
+  ns1-33.azure-dns.com
+  ns2-33.azure-dns.net
+  ns3-33.azure-dns.org
+  ns4-33.azure-dns.info
+
+  PS C:\lab\az104\Labs\04> nslookup az104-04-vm0.az104-04-wfe.com ns1-33.azure-dns.com
+Server:  UnKnown
+Address:  150.171.10.33
+
+Name:    az104-04-vm0.az104-04-wfe.com
+Address:  13.82.237.203
+
+
+PS C:\lab\az104\Labs\04> nslookup az104-04-vm1.az104-04-wfe.com ns1-33.azure-dns.com 
+Server:  UnKnown
+Address:  150.171.10.33
+
+Name:    az104-04-vm1.az104-04-wfe.com
+Address:  40.117.154.113
+
+
+Get-AzResourceGroup -Name 'az104-04*'
+
+PS C:\lab\az104\Labs\04> Get-AzResourceGroup -Name 'az104-04*'
+Get-AzResourceGroup : The term 'Get-AzResourceGroup' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if  
+a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ Get-AzResourceGroup -Name 'az104-04*'
+
+
+PS C:\lab\az104\Labs\04> az resource list
+[
+  {
+    "changedTime": "2022-06-23T15:35:05.032987+00:00",
+    "createdTime": "2022-06-23T15:24:44.541026+00:00",
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/cloud-shell-storage-southcentralus/providers/Microsoft.Storage/storageAccounts/cs710032001db4df1f5", 
+    "identity": null,
+    "kind": "StorageV2",
+    "location": "southcentralus",
+    "managedBy": null,
+    "name": "cs710032001db4df1f5",
+    "plan": null,
+    "properties": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "cloud-shell-storage-southcentralus",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard_LRS",
+      "size": null,
+      "tier": "Standard"
+    },
+    "tags": {
+      "ms-resource-usage": "azure-cloud-shell"
+    },
+    "type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "changedTime": "2022-06-23T15:46:17.292362+00:00",
+    "createdTime": "2022-06-23T15:36:17.182179+00:00",
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_eastus",
+    "identity": null,
+    "kind": null,
+    "location": "eastus",
+    "managedBy": null,
+    "name": "NetworkWatcher_eastus",
+    "plan": null,
+    "properties": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "NetworkWatcherRG",
+    "sku": null,
+    "tags": null,
+    "type": "Microsoft.Network/networkWatchers"
+  },
+  {
+    "changedTime": "2022-06-23T16:16:29.563174+00:00",
+    "createdTime": "2022-06-23T16:06:28.591007+00:00",
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/DefaultResourceGroup-EUS/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-b10fbc3d-9183-45a5-9ea5-54734bfd3ba7-EUS",
+    "identity": null,
+    "kind": null,
+    "location": "eastus",
+    "managedBy": null,
+    "name": "DefaultWorkspace-b10fbc3d-9183-45a5-9ea5-54734bfd3ba7-EUS",
+    "plan": null,
+    "properties": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "DefaultResourceGroup-EUS",
+    "sku": null,
+    "tags": null,
+    "type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "changedTime": "2022-06-23T16:17:13.216688+00:00",
+    "createdTime": "2022-06-23T16:07:08.184852+00:00",
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/DefaultResourceGroup-EUS/providers/Microsoft.OperationsManagement/solutions/VMInsights(DefaultWorkspace-b10fbc3d-9183-45a5-9ea5-54734bfd3ba7-EUS)",
+    "identity": null,
+    "kind": null,
+    "location": "eastus",
+    "managedBy": null,
+    "name": "VMInsights(DefaultWorkspace-b10fbc3d-9183-45a5-9ea5-54734bfd3ba7-EUS)",
+    "plan": {
+      "name": "VMInsights(DefaultWorkspace-b10fbc3d-9183-45a5-9ea5-54734bfd3ba7-EUS)",
+      "product": "OMSGallery/VMInsights",
+      "promotionCode": "",
+      "publisher": "Microsoft",
+      "version": null
+    },
+    "properties": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "DefaultResourceGroup-EUS",
+    "sku": null,
+    "tags": null,
+    "type": "Microsoft.OperationsManagement/solutions"
+  },
+  {
+    "changedTime": "2022-06-23T18:40:47.583034+00:00",
+    "createdTime": "2022-06-23T18:23:11.823288+00:00",
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1/providers/Microsoft.Network/virtualNetworks/az104-04-vnet1",
+    "identity": null,
+    "kind": null,
+    "location": "eastus",
+    "managedBy": null,
+    "name": "az104-04-vnet1",
+    "plan": null,
+    "properties": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "az104-04-rg1",
+    "sku": null,
+    "tags": null,
+    "type": "Microsoft.Network/virtualNetworks"
+  },
+  {
+    "changedTime": "2022-06-23T19:05:38.291749+00:00",
+    "createdTime": "2022-06-23T18:28:46.706327+00:00",
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1/providers/Microsoft.Network/networkInterfaces/az104-04-nic1",
+    "identity": null,
+    "kind": null,
+    "location": "eastus",
+    "managedBy": null,
+    "name": "az104-04-nic1",
+    "plan": null,
+    "properties": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "az104-04-rg1",
+    "sku": null,
+    "tags": null,
+    "type": "Microsoft.Network/networkInterfaces"
+  },
+  {
+    "changedTime": "2022-06-23T19:05:23.836827+00:00",
+    "createdTime": "2022-06-23T18:28:46.876873+00:00",
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1/providers/Microsoft.Network/networkInterfaces/az104-04-nic0",
+    "identity": null,
+    "kind": null,
+    "location": "eastus",
+    "managedBy": null,
+    "name": "az104-04-nic0",
+    "plan": null,
+    "properties": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "az104-04-rg1",
+    "sku": null,
+    "tags": null,
+    "type": "Microsoft.Network/networkInterfaces"
+  },
+  {
+    "changedTime": "2022-06-23T18:40:49.664005+00:00",
+    "createdTime": "2022-06-23T18:28:47.537176+00:00",
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1/providers/Microsoft.Compute/virtualMachines/az104-04-vm1",
+    "identity": null,
+    "kind": null,
+    "location": "eastus",
+    "managedBy": null,
+    "name": "az104-04-vm1",
+    "plan": null,
+    "properties": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "az104-04-rg1",
+    "sku": null,
+    "tags": null,
+    "type": "Microsoft.Compute/virtualMachines"
+  },
+  {
+    "changedTime": "2022-06-23T18:40:51.232470+00:00",
+    "createdTime": "2022-06-23T18:28:47.664594+00:00",
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1/providers/Microsoft.Compute/virtualMachines/az104-04-vm0",
+    "identity": null,
+    "kind": null,
+    "location": "eastus",
+    "managedBy": null,
+    "name": "az104-04-vm0",
+    "plan": null,
+    "properties": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "az104-04-rg1",
+    "sku": null,
+    "tags": null,
+    "type": "Microsoft.Compute/virtualMachines"
+  },
+  {
+    "changedTime": "2022-06-23T18:38:48.802202+00:00",
+    "createdTime": "2022-06-23T18:28:48.697685+00:00",
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/AZ104-04-RG1/providers/Microsoft.Compute/disks/az104-04-vm1_disk1_b90e67525bc04545864ea60674b6bbbc", 
+    "identity": null,
+    "kind": null,
+    "location": "eastus",
+    "managedBy": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1/providers/Microsoft.Compute/virtualMachines/az104-04-vm1",
+    "name": "az104-04-vm1_disk1_b90e67525bc04545864ea60674b6bbbc",
+    "plan": null,
+    "properties": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "AZ104-04-RG1",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Premium_LRS",
+      "size": null,
+      "tier": "Premium"
+    },
+    "tags": null,
+    "type": "Microsoft.Compute/disks"
+  },
+  {
+    "changedTime": "2022-06-23T18:38:49.339183+00:00",
+    "createdTime": "2022-06-23T18:28:49.036120+00:00",
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/AZ104-04-RG1/providers/Microsoft.Compute/disks/az104-04-vm0_disk1_2886bd4935f649fe934ead4122356a26", 
+    "identity": null,
+    "kind": null,
+    "location": "eastus",
+    "managedBy": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1/providers/Microsoft.Compute/virtualMachines/az104-04-vm0",
+    "name": "az104-04-vm0_disk1_2886bd4935f649fe934ead4122356a26",
+    "plan": null,
+    "properties": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "AZ104-04-RG1",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Premium_LRS",
+      "size": null,
+      "tier": "Premium"
+    },
+    "tags": null,
+    "type": "Microsoft.Compute/disks"
+  },
+  {
+    "changedTime": "2022-06-23T18:51:23.888186+00:00",
+    "createdTime": "2022-06-23T18:39:18.795417+00:00",
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1/providers/Microsoft.Network/publicIPAddresses/az104-04-pip0",
+    "identity": null,
+    "kind": null,
+    "location": "eastus",
+    "managedBy": null,
+    "name": "az104-04-pip0",
+    "plan": null,
+    "properties": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "az104-04-rg1",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard",
+      "size": null,
+      "tier": null
+    },
+    "tags": null,
+    "type": "Microsoft.Network/publicIPAddresses"
+  },
+  {
+    "changedTime": "2022-06-23T18:53:12.127833+00:00",
+    "createdTime": "2022-06-23T18:41:06.990671+00:00",
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1/providers/Microsoft.Network/publicIPAddresses/az104-04-pip1",
+    "identity": null,
+    "kind": null,
+    "location": "eastus",
+    "managedBy": null,
+    "name": "az104-04-pip1",
+    "plan": null,
+    "properties": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "az104-04-rg1",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard",
+      "size": null,
+      "tier": null
+    },
+    "tags": null,
+    "type": "Microsoft.Network/publicIPAddresses"
+  },
+  {
+    "changedTime": "2022-06-23T19:02:02.747360+00:00",
+    "createdTime": "2022-06-23T18:49:59.552366+00:00",
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1/providers/Microsoft.Network/networkSecurityGroups/az104-04-nsg01",
+    "identity": null,
+    "kind": null,
+    "location": "eastus",
+    "managedBy": null,
+    "name": "az104-04-nsg01",
+    "plan": null,
+    "properties": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "az104-04-rg1",
+    "sku": null,
+    "tags": {},
+    "type": "Microsoft.Network/networkSecurityGroups"
+  },
+  {
+    "changedTime": "2022-06-23T19:16:37.745810+00:00",
+    "createdTime": "2022-06-23T19:06:04.069189+00:00",
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1/providers/Microsoft.Network/privateDnsZones/contoso.org",
+    "identity": null,
+    "kind": null,
+    "location": "global",
+    "managedBy": null,
+    "name": "contoso.org",
+    "plan": null,
+    "properties": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "az104-04-rg1",
+    "sku": null,
+    "tags": {},
+    "type": "Microsoft.Network/privateDnsZones"
+  },
+  {
+    "changedTime": "2022-06-23T19:19:00.847989+00:00",
+    "createdTime": "2022-06-23T19:08:26.011861+00:00",
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1/providers/Microsoft.Network/privateDnsZones/contoso.org/virtualNetworkLinks/az104-04-vnet1-link",
+    "identity": null,
+    "kind": null,
+    "location": "global",
+    "managedBy": null,
+    "name": "contoso.org/az104-04-vnet1-link",
+    "plan": null,
+    "properties": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "az104-04-rg1",
+    "sku": null,
+    "tags": null,
+    "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks"
+  },
+  {
+    "changedTime": "2022-06-23T19:27:06.853753+00:00",
+    "createdTime": "2022-06-23T19:17:04.255945+00:00",
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1/providers/Microsoft.Network/dnszones/az104-04-wfe.com",
+    "identity": null,
+    "kind": null,
+    "location": "global",
+    "managedBy": null,
+    "name": "az104-04-wfe.com",
+    "plan": null,
+    "properties": null,
+    "provisioningState": "Succeeded",
+    "resourceGroup": "az104-04-rg1",
+    "sku": null,
+    "tags": {},
+    "type": "Microsoft.Network/dnszones"
+  }
+]
+
+
+
+Get-AzResourceGroup -Name 'az104-04*' | Remove-AzResourceGroup -Force -AsJob

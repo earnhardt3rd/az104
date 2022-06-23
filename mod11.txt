@@ -14,3 +14,67 @@ https://www.microsoftazuresponsorships.com/balance
 
 
 ** Open Cloud Shell ~ Click Create Storage
+
+
+--------------------------------------------------------------
+PS /home/frank> ./01-create-resourceGroup.ps1
+
+ResourceGroupName : az104-11-rg0
+Location          : eastus
+ProvisioningState : Succeeded
+Tags              : 
+ResourceId        : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-11-rg0
+
+PS /home/frank> ./02-deployTemplate.ps1
+
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
+2      Long Running O… AzureLongRunni… Running       True            localhost            New-AzResourceGroupDeplo…
+
+
+
+PS /home/frank> ./03-register.ps1
+
+ProviderNamespace : microsoft.insights
+RegistrationState : Registering
+ResourceTypes     : {components, components/query, components/metadata, components/metrics…}
+Locations         : {East US, South Central US, North Europe, West Europe…}
+
+ProviderNamespace : Microsoft.AlertsManagement
+RegistrationState : Registering
+ResourceTypes     : {alerts, alertsSummary, smartGroups, smartDetectorAlertRules…}
+Locations         : {global}
+
+
+
+https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/overview
+
+C:\Users\Student>ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : az104-11-vm0
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : gcaxwe1jtu5u3pscag0iuwbmwb.bx.internal.cloudapp.net
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : gcaxwe1jtu5u3pscag0iuwbmwb.bx.internal.cloudapp.net
+   Description . . . . . . . . . . . : Microsoft Hyper-V Network Adapter
+   Physical Address. . . . . . . . . : 00-0D-3A-9D-68-56
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::c1ac:bc4:e395:4ce7%4(Preferred)
+   IPv4 Address. . . . . . . . . . . : 10.0.0.4(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.192
+   Lease Obtained. . . . . . . . . . : Thursday, June 23, 2022 3:36:33 PM
+   Lease Expires . . . . . . . . . . : Sunday, July 30, 2158 11:13:27 PM
+   Default Gateway . . . . . . . . . : 10.0.0.1
+   DHCP Server . . . . . . . . . . . : 168.63.129.16
+   DHCPv6 IAID . . . . . . . . . . . : 100666682
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-45-D0-31-00-0D-3A-9D-68-56
+   DNS Servers . . . . . . . . . . . : 168.63.129.16
+   NetBIOS over Tcpip. . . . . . . . : Enabled

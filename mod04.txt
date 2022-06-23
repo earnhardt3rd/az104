@@ -1258,4 +1258,65 @@ PS C:\lab\az104\Labs\04> az resource list
 
 
 
+PS C:\lab\az104\Labs\04> nslookup nextcloud.az104-04-wfe.com ns1-33.azure-dns.com   
+Server:  UnKnown
+Address:  150.171.10.33
+
+Name:    nextcloud.az104-04-wfe.com
+Address:  71.64.205.165
+
+
 Get-AzResourceGroup -Name 'az104-04*' | Remove-AzResourceGroup -Force -AsJob
+
+
+
+
+PS C:\lab\az104\Labs\04> az group list
+[
+  {
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/cloud-shell-storage-southcentralus",
+    "location": "southcentralus",
+    "managedBy": null,
+    "name": "cloud-shell-storage-southcentralus",
+    "properties": {
+      "provisioningState": "Succeeded"
+    },
+    "tags": null,
+    "type": "Microsoft.Resources/resourceGroups"
+  },
+  {
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/NetworkWatcherRG",
+    "location": "eastus",
+    "managedBy": null,
+    "name": "NetworkWatcherRG",
+    "properties": {
+      "provisioningState": "Succeeded"
+    },
+    "tags": null,
+    "type": "Microsoft.Resources/resourceGroups"
+  },
+  {
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/DefaultResourceGroup-EUS",
+    "location": "eastus",
+    "name": "DefaultResourceGroup-EUS",
+    "properties": {
+      "provisioningState": "Succeeded"
+    },
+    "tags": null,
+    "type": "Microsoft.Resources/resourceGroups"
+  },
+  {
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1",
+    "location": "eastus",
+    "managedBy": null,
+    "name": "az104-04-rg1",
+    "properties": {
+      "provisioningState": "Succeeded"
+    },
+    "tags": null,
+    "type": "Microsoft.Resources/resourceGroups"
+  }
+]
+PS C:\lab\az104\Labs\04> az group delete --name az104-04-rg1
+Are you sure you want to perform this operation? (y/n): y
+ - Running ..

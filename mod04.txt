@@ -2,3 +2,220 @@ Promo Code:QGE47M2TJDMVOUXCKC
 
 User:Admin
 Pass:Pa55w.rd
+
+PS /home/frank> ./01-vms-loop-template.ps1
+
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
+2      Long Running O… AzureLongRunni… Running       True            localhost            New-AzResourceGroupDeplo…
+
+
+
+PS C:\lab\az104\Labs\04> az login
+The default web browser has been opened at https://login.microsoftonline.com/common/oauth2/authorize. Please continue the login in the web browser. If no web browser is available 
+or if the web browser fails to open, use device code flow with `az login --use-device-code`.
+You have logged in. Now let us find all the subscriptions to which you have access...
+The following tenants don't contain accessible subscriptions. Use 'az login --allow-no-subscriptions' to have tenant level access.
+8e378a08-962e-4e92-ab46-3f3a2b236787 'Contoso Lab'
+[
+  {
+    "cloudName": "AzureCloud",
+    "homeTenantId": "f1c58bee-b6cb-4146-b751-b4d69e35780b",
+    "id": "b10fbc3d-9183-45a5-9ea5-54734bfd3ba7",
+    "managedByTenants": [],
+    "name": "Azure Pass - Sponsorship",
+    "state": "Enabled",
+    "tenantId": "f1c58bee-b6cb-4146-b751-b4d69e35780b",
+    "user": {
+      "name": "az104-earnhardt@outlook.com",
+      "type": "user"
+    }
+  }
+]
+PS C:\lab\az104\Labs\04> az vm list
+[
+  {
+    "additionalCapabilities": null,
+    "availabilitySet": null,
+    "billingProfile": null,
+    "diagnosticsProfile": null,
+    "evictionPolicy": null,
+    "extendedLocation": null,
+    "extensionsTimeBudget": null,
+    "hardwareProfile": {
+      "vmSize": "Standard_D2s_v3"
+    },
+    "host": null,
+    "hostGroup": null,
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/AZ104-04-RG1/providers/Microsoft.Compute/virtualMachines/az104-04-vm0",
+    "identity": null,
+    "instanceView": null,
+    "licenseType": null,
+    "location": "eastus",
+    "name": "az104-04-vm0",
+    "networkProfile": {
+      "networkInterfaces": [
+        {
+          "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1/providers/Microsoft.Network/networkInterfaces/az104-04-nic0",
+          "primary": true,
+          "resourceGroup": "az104-04-rg1"
+        }
+      ]
+    },
+    "osProfile": {
+      "adminPassword": null,
+      "adminUsername": "Student",
+      "allowExtensionOperations": true,
+      "computerName": "az104-04-vm0",
+      "customData": null,
+      "linuxConfiguration": null,
+      "requireGuestProvisionSignal": null,
+      "secrets": [],
+      "windowsConfiguration": {
+        "additionalUnattendContent": null,
+        "enableAutomaticUpdates": true,
+        "patchSettings": {
+          "enableHotpatching": null,
+          "patchMode": "AutomaticByOS"
+        },
+        "provisionVmAgent": true,
+        "timeZone": null,
+        "winRm": null
+      }
+    },
+    "plan": null,
+    "platformFaultDomain": null,
+    "priority": null,
+    "provisioningState": "Succeeded",
+    "proximityPlacementGroup": null,
+    "resourceGroup": "AZ104-04-RG1",
+    "resources": null,
+    "securityProfile": null,
+    "storageProfile": {
+      "dataDisks": [],
+      "imageReference": {
+        "exactVersion": "17763.3132.220610",
+        "id": null,
+        "offer": "WindowsServer",
+        "publisher": "MicrosoftWindowsServer",
+        "sku": "2019-Datacenter",
+        "version": "latest"
+      },
+      "osDisk": {
+        "caching": "ReadWrite",
+        "createOption": "FromImage",
+        "diffDiskSettings": null,
+        "diskSizeGb": 127,
+        "encryptionSettings": null,
+        "image": null,
+        "managedDisk": {
+          "diskEncryptionSet": null,
+          "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1/providers/Microsoft.Compute/disks/az104-04-vm0_disk1_2886bd4935f649fe934ead4122356a26",
+          "resourceGroup": "az104-04-rg1",
+          "storageAccountType": "Premium_LRS"
+        },
+        "name": "az104-04-vm0_disk1_2886bd4935f649fe934ead4122356a26",
+        "osType": "Windows",
+        "vhd": null,
+        "writeAcceleratorEnabled": null
+      }
+    },
+    "tags": null,
+    "type": "Microsoft.Compute/virtualMachines",
+    "virtualMachineScaleSet": null,
+    "vmId": "cd449437-2307-4496-9093-613afc5efb3b",
+    "zones": null
+  },
+  {
+    "additionalCapabilities": null,
+    "availabilitySet": null,
+    "billingProfile": null,
+    "diagnosticsProfile": null,
+    "evictionPolicy": null,
+    "extendedLocation": null,
+    "extensionsTimeBudget": null,
+    "hardwareProfile": {
+      "vmSize": "Standard_D2s_v3"
+    },
+    "host": null,
+    "hostGroup": null,
+    "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/AZ104-04-RG1/providers/Microsoft.Compute/virtualMachines/az104-04-vm1",
+    "identity": null,
+    "instanceView": null,
+    "licenseType": null,
+    "location": "eastus",
+    "name": "az104-04-vm1",
+    "networkProfile": {
+      "networkInterfaces": [
+        {
+          "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1/providers/Microsoft.Network/networkInterfaces/az104-04-nic1",
+          "primary": true,
+          "resourceGroup": "az104-04-rg1"
+        }
+      ]
+    },
+    "osProfile": {
+      "adminPassword": null,
+      "adminUsername": "Student",
+      "allowExtensionOperations": true,
+      "computerName": "az104-04-vm1",
+      "customData": null,
+      "linuxConfiguration": null,
+      "requireGuestProvisionSignal": null,
+      "secrets": [],
+      "windowsConfiguration": {
+        "additionalUnattendContent": null,
+        "enableAutomaticUpdates": true,
+        "patchSettings": {
+          "enableHotpatching": null,
+          "patchMode": "AutomaticByOS"
+        },
+        "provisionVmAgent": true,
+        "timeZone": null,
+        "winRm": null
+      }
+    },
+    "plan": null,
+    "platformFaultDomain": null,
+    "priority": null,
+    "provisioningState": "Succeeded",
+    "proximityPlacementGroup": null,
+    "resourceGroup": "AZ104-04-RG1",
+    "resources": null,
+    "securityProfile": null,
+    "storageProfile": {
+      "dataDisks": [],
+      "imageReference": {
+        "exactVersion": "17763.3132.220610",
+        "id": null,
+        "offer": "WindowsServer",
+        "publisher": "MicrosoftWindowsServer",
+        "sku": "2019-Datacenter",
+        "version": "latest"
+      },
+      "osDisk": {
+        "caching": "ReadWrite",
+        "createOption": "FromImage",
+        "diffDiskSettings": null,
+        "diskSizeGb": 127,
+        "encryptionSettings": null,
+        "image": null,
+        "managedDisk": {
+          "diskEncryptionSet": null,
+          "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1/providers/Microsoft.Compute/disks/az104-04-vm1_disk1_b90e67525bc04545864ea60674b6bbbc",
+          "resourceGroup": "az104-04-rg1",
+          "storageAccountType": "Premium_LRS"
+        },
+        "name": "az104-04-vm1_disk1_b90e67525bc04545864ea60674b6bbbc",
+        "osType": "Windows",
+        "vhd": null,
+        "writeAcceleratorEnabled": null
+      }
+    },
+    "tags": null,
+    "type": "Microsoft.Compute/virtualMachines",
+    "virtualMachineScaleSet": null,
+    "vmId": "a13980e3-a2ac-4ed3-a8f7-3cdf6f38f54f",
+    "zones": null
+  }
+]

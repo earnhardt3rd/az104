@@ -102,3 +102,28 @@ InsightsMetrics
 | where TimeGenerated > ago(1h)
 | where Name == "AvailableMB"
 | project TimeGenerated, Name, CounterValue| render timechart
+
+
+
+
+
+PS /home/frank> Get-AzResourceGroup -Name 'az104-11*'                                     
+
+ResourceGroupName : az104-11-rg0
+Location          : eastus
+ProvisioningState : Succeeded
+Tags              : 
+ResourceId        : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-11-rg0
+
+ResourceGroupName : az104-11-rg1
+Location          : eastus
+ProvisioningState : Succeeded
+Tags              : 
+ResourceId        : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-11-rg1
+
+PS /home/frank> Get-AzResourceGroup -Name 'az104-11*' | Remove-AzResourceGroup -Force -AsJob
+
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
+2      Long Running O… AzureLongRunni… Running       True            localhost            Remove-AzResourceGroup
+3      Long Running O… AzureLongRunni… Running       True            localhost            Remove-AzResourceGroup

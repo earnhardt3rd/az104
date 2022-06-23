@@ -78,3 +78,27 @@ Ethernet adapter Ethernet:
    DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-45-D0-31-00-0D-3A-9D-68-56
    DNS Servers . . . . . . . . . . . : 168.63.129.16
    NetBIOS over Tcpip. . . . . . . . : Enabled
+
+
+
+
+   // Chart CPU usage trends 
+// Calculate CPU usage patterns over the last day, chart by percentiles. 
+// To create an alert for this query, click '+ New alert rule'
+Perf
+| where CounterName == "% Processor Time"
+| where ObjectName == "Processor"
+| summarize avg(CounterValue) by bin(TimeGenerated, 15min), Computer, _ResourceId // bin is used to set the time grain to 15 minutes
+| render timechart
+// Perf table stores performance counters for Windows and Linux computers
+// Counters are specified using ObjectName (performance object), InstanceName and CounterName
+// % Processor Time captures CPU activity, ObjectNames can be Processor, Process and Process Information
+
+
+
+// Virtual Machine available memory
+// Chart the VM's available memory over the last hour.
+InsightsMetrics
+| where TimeGenerated > ago(1h)
+| where Name == "AvailableMB"
+| project TimeGenerated, Name, CounterValue| render timechart

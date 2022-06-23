@@ -219,3 +219,667 @@ PS C:\lab\az104\Labs\04> az vm list
     "zones": null
   }
 ]
+
+
+
+PS C:\lab\az104\Labs\04> az group show -n az104-04-rg1
+{
+  "id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-04-rg1",
+  "location": "eastus",
+  "managedBy": null,
+  "name": "az104-04-rg1",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null,
+  "type": "Microsoft.Resources/resourceGroups"
+}
+
+
+PS C:\lab\az104\Labs\04> az group show -n az104-04-rg1 --query location
+"eastus"
+
+
+PS C:\lab\az104\Labs\04> az vm list-skus --location eastus -o table
+ResourceType      Locations    Name                   Zones    Restrictions
+----------------  -----------  ---------------------  -------  --------------
+availabilitySets  eastus       Aligned                         None
+availabilitySets  eastus       Classic                         None
+disks             eastus       Premium_LRS            1,2,3    None
+disks             eastus       Premium_LRS            1,2,3    None
+disks             eastus       Premium_LRS            1,2,3    None
+disks             eastus       Premium_LRS            1,2,3    None
+disks             eastus       Premium_LRS            1,2,3    None
+disks             eastus       Premium_LRS            1,2,3    None
+disks             eastus       Premium_LRS            1,2,3    None
+disks             eastus       Premium_LRS            1,2,3    None
+disks             eastus       Premium_LRS            1,2,3    None
+disks             eastus       Premium_LRS            1,2,3    None
+disks             eastus       Premium_LRS            1,2,3    None
+disks             eastus       Premium_LRS            1,2,3    None
+disks             eastus       Premium_LRS            1,2,3    None
+disks             eastus       Premium_LRS            1,2,3    None
+disks             eastus       StandardSSD_LRS        1,2,3    None
+disks             eastus       StandardSSD_LRS        1,2,3    None
+disks             eastus       StandardSSD_LRS        1,2,3    None
+disks             eastus       StandardSSD_LRS        1,2,3    None
+disks             eastus       StandardSSD_LRS        1,2,3    None
+disks             eastus       StandardSSD_LRS        1,2,3    None
+disks             eastus       StandardSSD_LRS        1,2,3    None
+disks             eastus       StandardSSD_LRS        1,2,3    None
+disks             eastus       StandardSSD_LRS        1,2,3    None
+disks             eastus       StandardSSD_LRS        1,2,3    None
+disks             eastus       StandardSSD_LRS        1,2,3    None
+disks             eastus       StandardSSD_LRS        1,2,3    None
+disks             eastus       StandardSSD_LRS        1,2,3    None
+disks             eastus       StandardSSD_LRS        1,2,3    None
+disks             eastus       Standard_LRS           1,2,3    None
+disks             eastus       Standard_LRS           1,2,3    None
+disks             eastus       Standard_LRS           1,2,3    None
+disks             eastus       Standard_LRS           1,2,3    None
+disks             eastus       Standard_LRS           1,2,3    None
+disks             eastus       Standard_LRS           1,2,3    None
+disks             eastus       Standard_LRS           1,2,3    None
+disks             eastus       Standard_LRS           1,2,3    None
+disks             eastus       Standard_LRS           1,2,3    None
+disks             eastus       Standard_LRS           1,2,3    None
+disks             eastus       Standard_LRS           1,2,3    None
+disks             eastus       UltraSSD_LRS           1,2,3    None
+hostGroups/hosts  eastus       DADSv5-Type1           1,2,3    None
+hostGroups/hosts  eastus       DASv4-Type1            1,2,3    None
+hostGroups/hosts  eastus       DASv4-Type2            1,2,3    None
+hostGroups/hosts  eastus       DASv5-Type1            1,2,3    None
+hostGroups/hosts  eastus       DCSv2-Type1            1,2,3    None
+hostGroups/hosts  eastus       DDSv4-Type1            1,2,3    None
+hostGroups/hosts  eastus       DDSv4-Type2            1,2,3    None
+hostGroups/hosts  eastus       DDSv5-Type1            1,2,3    None
+hostGroups/hosts  eastus       DSv3-Type3             1,2,3    None
+hostGroups/hosts  eastus       DSv3-Type4             1,2,3    None
+hostGroups/hosts  eastus       DSv4-Type1             1,2,3    None
+hostGroups/hosts  eastus       DSv4-Type2             1,2,3    None
+hostGroups/hosts  eastus       DSv5-Type1             1,2,3    None
+hostGroups/hosts  eastus       EADSv5-Type1           1,2,3    None
+hostGroups/hosts  eastus       EASv4-Type1            1,2,3    None
+hostGroups/hosts  eastus       EASv4-Type2            1,2,3    None
+hostGroups/hosts  eastus       EASv5-Type1            1,2,3    None
+hostGroups/hosts  eastus       Ebdsv5-Type1           1,2,3    None
+hostGroups/hosts  eastus       Ebsv5-Type1            1,2,3    None
+hostGroups/hosts  eastus       EDSv4-Type1            1,2,3    None
+hostGroups/hosts  eastus       EDSv4-Type2            1,2,3    None
+hostGroups/hosts  eastus       EDSv5-Type1            1,2,3    None
+hostGroups/hosts  eastus       ESv3-Type3             1,2,3    None
+hostGroups/hosts  eastus       ESv3-Type4             1,2,3    None
+hostGroups/hosts  eastus       ESv4-Type1             1,2,3    None
+hostGroups/hosts  eastus       ESv4-Type2             1,2,3    None
+hostGroups/hosts  eastus       ESv5-Type1             1,2,3    None
+hostGroups/hosts  eastus       FSv2-Type2             1,2,3    None
+hostGroups/hosts  eastus       FSv2-Type3             1,2,3    None
+hostGroups/hosts  eastus       FSv2-Type4             1,2,3    None
+hostGroups/hosts  eastus       FXmds-Type1            1        None
+hostGroups/hosts  eastus       Lasv3-Type1            2,3      None
+hostGroups/hosts  eastus       LSv2-Type1             1,2,3    None
+hostGroups/hosts  eastus       Lsv3-Type1             1,2,3    None
+hostGroups/hosts  eastus       Mdmsv2MedMem-Type1     1,2,3    None
+hostGroups/hosts  eastus       Mdsv2MedMem-Type1      1,2,3    None
+hostGroups/hosts  eastus       Mmsv2MedMem-Type1      1,2,3    None
+hostGroups/hosts  eastus       MS-Type1               1,2,3    None
+hostGroups/hosts  eastus       MSm-Type1              1,2,3    None
+hostGroups/hosts  eastus       MSmv2-Type1            1,2,3    None
+hostGroups/hosts  eastus       MSv2-Type1             1,2,3    None
+hostGroups/hosts  eastus       Msv2MedMem-Type1       1,2,3    None
+hostGroups/hosts  eastus       NVASv4-Type1           1,2,3    None
+hostGroups/hosts  eastus       NVSv3-Type1            1,2,3    None
+snapshots         eastus       Premium_LRS                     None
+snapshots         eastus       Standard_LRS                    None
+snapshots         eastus       Standard_ZRS                    None
+virtualMachines   eastus       Standard_A1_v2         1,2,3    None
+virtualMachines   eastus       Standard_A2m_v2        1,2,3    None
+virtualMachines   eastus       Standard_A2_v2         1,2,3    None
+virtualMachines   eastus       Standard_A4m_v2        1,2,3    None
+virtualMachines   eastus       Standard_A4_v2         1,2,3    None
+virtualMachines   eastus       Standard_A8m_v2        1,2,3    None
+virtualMachines   eastus       Standard_A8_v2         1,2,3    None
+virtualMachines   eastus       Standard_B12ms         1,2,3    None
+virtualMachines   eastus       Standard_B16ms         1,2,3    None
+virtualMachines   eastus       Standard_B1ls          1,2,3    None
+virtualMachines   eastus       Standard_B1ms          1,2,3    None
+virtualMachines   eastus       Standard_B1s           1,2,3    None
+virtualMachines   eastus       Standard_B20ms         1,2,3    None
+virtualMachines   eastus       Standard_B2ms          1,2,3    None
+virtualMachines   eastus       Standard_B2s           1,2,3    None
+virtualMachines   eastus       Standard_B4ms          1,2,3    None
+virtualMachines   eastus       Standard_B8ms          1,2,3    None
+virtualMachines   eastus       Standard_D11_v2        1,2,3    None
+virtualMachines   eastus       Standard_D12_v2        1,2,3    None
+virtualMachines   eastus       Standard_D13_v2        1,2,3    None
+virtualMachines   eastus       Standard_D14_v2        1,2,3    None
+virtualMachines   eastus       Standard_D16ads_v5     1,2,3    None
+virtualMachines   eastus       Standard_D16as_v4      1,2,3    None
+virtualMachines   eastus       Standard_D16as_v5      1,2,3    None
+virtualMachines   eastus       Standard_D16a_v4       1,2,3    None
+virtualMachines   eastus       Standard_D16ds_v4      1,2,3    None
+virtualMachines   eastus       Standard_D16ds_v5      1,2,3    None
+virtualMachines   eastus       Standard_D16d_v4       1,2,3    None
+virtualMachines   eastus       Standard_D16d_v5       1,2,3    None
+virtualMachines   eastus       Standard_D16s_v3       1,2,3    None
+virtualMachines   eastus       Standard_D16s_v4       1,2,3    None
+virtualMachines   eastus       Standard_D16s_v5       1,2,3    None
+virtualMachines   eastus       Standard_D16_v3        1,2,3    None
+virtualMachines   eastus       Standard_D16_v4        1,2,3    None
+virtualMachines   eastus       Standard_D16_v5        1,2,3    None
+virtualMachines   eastus       Standard_D1_v2         1,2,3    None
+virtualMachines   eastus       Standard_D2ads_v5      1,2,3    None
+virtualMachines   eastus       Standard_D2as_v4       1,2,3    None
+virtualMachines   eastus       Standard_D2as_v5       1,2,3    None
+virtualMachines   eastus       Standard_D2a_v4        1,2,3    None
+virtualMachines   eastus       Standard_D2ds_v4       1,2,3    None
+virtualMachines   eastus       Standard_D2ds_v5       1,2,3    None
+virtualMachines   eastus       Standard_D2d_v4        1,2,3    None
+virtualMachines   eastus       Standard_D2d_v5        1,2,3    None
+virtualMachines   eastus       Standard_D2s_v3        1,2,3    None
+virtualMachines   eastus       Standard_D2s_v4        1,2,3    None
+virtualMachines   eastus       Standard_D2s_v5        1,2,3    None
+virtualMachines   eastus       Standard_D2_v2         1,2,3    None
+virtualMachines   eastus       Standard_D2_v3         1,2,3    None
+virtualMachines   eastus       Standard_D2_v4         1,2,3    None
+virtualMachines   eastus       Standard_D2_v5         1,2,3    None
+virtualMachines   eastus       Standard_D32ads_v5     1,2,3    None
+virtualMachines   eastus       Standard_D32as_v4      1,2,3    None
+virtualMachines   eastus       Standard_D32as_v5      1,2,3    None
+virtualMachines   eastus       Standard_D32a_v4       1,2,3    None
+virtualMachines   eastus       Standard_D32ds_v4      1,2,3    None
+virtualMachines   eastus       Standard_D32ds_v5      1,2,3    None
+virtualMachines   eastus       Standard_D32d_v4       1,2,3    None
+virtualMachines   eastus       Standard_D32d_v5       1,2,3    None
+virtualMachines   eastus       Standard_D32s_v3       1,2,3    None
+virtualMachines   eastus       Standard_D32s_v4       1,2,3    None
+virtualMachines   eastus       Standard_D32s_v5       1,2,3    None
+virtualMachines   eastus       Standard_D32_v3        1,2,3    None
+virtualMachines   eastus       Standard_D32_v4        1,2,3    None
+virtualMachines   eastus       Standard_D32_v5        1,2,3    None
+virtualMachines   eastus       Standard_D3_v2         1,2,3    None
+virtualMachines   eastus       Standard_D48ads_v5     1,2,3    None
+virtualMachines   eastus       Standard_D48as_v4      1,2,3    None
+virtualMachines   eastus       Standard_D48as_v5      1,2,3    None
+virtualMachines   eastus       Standard_D48a_v4       1,2,3    None
+virtualMachines   eastus       Standard_D48ds_v4      1,2,3    None
+virtualMachines   eastus       Standard_D48ds_v5      1,2,3    None
+virtualMachines   eastus       Standard_D48d_v4       1,2,3    None
+virtualMachines   eastus       Standard_D48d_v5       1,2,3    None
+virtualMachines   eastus       Standard_D48s_v3       1,2,3    None
+virtualMachines   eastus       Standard_D48s_v4       1,2,3    None
+virtualMachines   eastus       Standard_D48s_v5       1,2,3    None
+virtualMachines   eastus       Standard_D48_v3        1,2,3    None
+virtualMachines   eastus       Standard_D48_v4        1,2,3    None
+virtualMachines   eastus       Standard_D48_v5        1,2,3    None
+virtualMachines   eastus       Standard_D4ads_v5      1,2,3    None
+virtualMachines   eastus       Standard_D4as_v4       1,2,3    None
+virtualMachines   eastus       Standard_D4as_v5       1,2,3    None
+virtualMachines   eastus       Standard_D4a_v4        1,2,3    None
+virtualMachines   eastus       Standard_D4ds_v4       1,2,3    None
+virtualMachines   eastus       Standard_D4ds_v5       1,2,3    None
+virtualMachines   eastus       Standard_D4d_v4        1,2,3    None
+virtualMachines   eastus       Standard_D4d_v5        1,2,3    None
+virtualMachines   eastus       Standard_D4s_v3        1,2,3    None
+virtualMachines   eastus       Standard_D4s_v4        1,2,3    None
+virtualMachines   eastus       Standard_D4s_v5        1,2,3    None
+virtualMachines   eastus       Standard_D4_v2         1,2,3    None
+virtualMachines   eastus       Standard_D4_v3         1,2,3    None
+virtualMachines   eastus       Standard_D4_v4         1,2,3    None
+virtualMachines   eastus       Standard_D4_v5         1,2,3    None
+virtualMachines   eastus       Standard_D5_v2         1,2,3    None
+virtualMachines   eastus       Standard_D64ads_v5     1,2,3    None
+virtualMachines   eastus       Standard_D64as_v4      1,2,3    None
+virtualMachines   eastus       Standard_D64as_v5      1,2,3    None
+virtualMachines   eastus       Standard_D64a_v4       1,2,3    None
+virtualMachines   eastus       Standard_D64ds_v4      1,2,3    None
+virtualMachines   eastus       Standard_D64ds_v5      1,2,3    None
+virtualMachines   eastus       Standard_D64d_v4       1,2,3    None
+virtualMachines   eastus       Standard_D64d_v5       1,2,3    None
+virtualMachines   eastus       Standard_D64s_v3       1,2,3    None
+virtualMachines   eastus       Standard_D64s_v4       1,2,3    None
+virtualMachines   eastus       Standard_D64s_v5       1,2,3    None
+virtualMachines   eastus       Standard_D64_v3        1,2,3    None
+virtualMachines   eastus       Standard_D64_v4        1,2,3    None
+virtualMachines   eastus       Standard_D64_v5        1,2,3    None
+virtualMachines   eastus       Standard_D8ads_v5      1,2,3    None
+virtualMachines   eastus       Standard_D8as_v4       1,2,3    None
+virtualMachines   eastus       Standard_D8as_v5       1,2,3    None
+virtualMachines   eastus       Standard_D8a_v4        1,2,3    None
+virtualMachines   eastus       Standard_D8ds_v4       1,2,3    None
+virtualMachines   eastus       Standard_D8ds_v5       1,2,3    None
+virtualMachines   eastus       Standard_D8d_v4        1,2,3    None
+virtualMachines   eastus       Standard_D8d_v5        1,2,3    None
+virtualMachines   eastus       Standard_D8s_v3        1,2,3    None
+virtualMachines   eastus       Standard_D8s_v4        1,2,3    None
+virtualMachines   eastus       Standard_D8s_v5        1,2,3    None
+virtualMachines   eastus       Standard_D8_v3         1,2,3    None
+virtualMachines   eastus       Standard_D8_v4         1,2,3    None
+virtualMachines   eastus       Standard_D8_v5         1,2,3    None
+virtualMachines   eastus       Standard_D96ads_v5     1,2,3    None
+virtualMachines   eastus       Standard_D96as_v4      1,2,3    None
+virtualMachines   eastus       Standard_D96as_v5      1,2,3    None
+virtualMachines   eastus       Standard_D96a_v4       1,2,3    None
+virtualMachines   eastus       Standard_D96ds_v5      1,2,3    None
+virtualMachines   eastus       Standard_D96d_v5       1,2,3    None
+virtualMachines   eastus       Standard_D96s_v5       1,2,3    None
+virtualMachines   eastus       Standard_D96_v5        1,2,3    None
+virtualMachines   eastus       Standard_DC16ads_v5    2        None
+virtualMachines   eastus       Standard_DC16as_v5     2        None
+virtualMachines   eastus       Standard_DC1s_v2       1,2,3    None
+virtualMachines   eastus       Standard_DC2ads_v5     2        None
+virtualMachines   eastus       Standard_DC2as_v5      2        None
+virtualMachines   eastus       Standard_DC2s_v2       1,2,3    None
+virtualMachines   eastus       Standard_DC32ads_v5    2        None
+virtualMachines   eastus       Standard_DC32as_v5     2        None
+virtualMachines   eastus       Standard_DC48ads_v5    2        None
+virtualMachines   eastus       Standard_DC48as_v5     2        None
+virtualMachines   eastus       Standard_DC4ads_v5     2        None
+virtualMachines   eastus       Standard_DC4as_v5      2        None
+virtualMachines   eastus       Standard_DC4s_v2       1,2,3    None
+virtualMachines   eastus       Standard_DC64ads_v5    2        None
+virtualMachines   eastus       Standard_DC64as_v5     2        None
+virtualMachines   eastus       Standard_DC8ads_v5     2        None
+virtualMachines   eastus       Standard_DC8as_v5      2        None
+virtualMachines   eastus       Standard_DC8_v2        1,2,3    None
+virtualMachines   eastus       Standard_DC96ads_v5    2        None
+virtualMachines   eastus       Standard_DC96as_v5     2        None
+virtualMachines   eastus       Standard_DS11-1_v2     1,2,3    None
+virtualMachines   eastus       Standard_DS11_v2       1,2,3    None
+virtualMachines   eastus       Standard_DS12-1_v2     1,2,3    None
+virtualMachines   eastus       Standard_DS12-2_v2     1,2,3    None
+virtualMachines   eastus       Standard_DS12_v2       1,2,3    None
+virtualMachines   eastus       Standard_DS13-2_v2     1,2,3    None
+virtualMachines   eastus       Standard_DS13-4_v2     1,2,3    None
+virtualMachines   eastus       Standard_DS13_v2       1,2,3    None
+virtualMachines   eastus       Standard_DS14-4_v2     1,2,3    None
+virtualMachines   eastus       Standard_DS14-8_v2     1,2,3    None
+virtualMachines   eastus       Standard_DS14_v2       1,2,3    None
+virtualMachines   eastus       Standard_DS1_v2        1,2,3    None
+virtualMachines   eastus       Standard_DS2_v2        1,2,3    None
+virtualMachines   eastus       Standard_DS3_v2        1,2,3    None
+virtualMachines   eastus       Standard_DS4_v2        1,2,3    None
+virtualMachines   eastus       Standard_DS5_v2        1,2,3    None
+virtualMachines   eastus       Standard_E104ids_v5    1,2,3    None
+virtualMachines   eastus       Standard_E104id_v5     1,2,3    None
+virtualMachines   eastus       Standard_E104is_v5     1,2,3    None
+virtualMachines   eastus       Standard_E104i_v5      1,2,3    None
+virtualMachines   eastus       Standard_E112iads_v5   1,2,3    None
+virtualMachines   eastus       Standard_E112ias_v5    1,2,3    None
+virtualMachines   eastus       Standard_E16-4ads_v5   1,2,3    None
+virtualMachines   eastus       Standard_E16-4as_v4    1,2,3    None
+virtualMachines   eastus       Standard_E16-4as_v5    1,2,3    None
+virtualMachines   eastus       Standard_E16-4ds_v4    1,2,3    None
+virtualMachines   eastus       Standard_E16-4ds_v5    1,2,3    None
+virtualMachines   eastus       Standard_E16-4s_v3     1,2,3    None
+virtualMachines   eastus       Standard_E16-4s_v4     1,2,3    None
+virtualMachines   eastus       Standard_E16-4s_v5     1,2,3    None
+virtualMachines   eastus       Standard_E16-8ads_v5   1,2,3    None
+virtualMachines   eastus       Standard_E16-8as_v4    1,2,3    None
+virtualMachines   eastus       Standard_E16-8as_v5    1,2,3    None
+virtualMachines   eastus       Standard_E16-8ds_v4    1,2,3    None
+virtualMachines   eastus       Standard_E16-8ds_v5    1,2,3    None
+virtualMachines   eastus       Standard_E16-8s_v3     1,2,3    None
+virtualMachines   eastus       Standard_E16-8s_v4     1,2,3    None
+virtualMachines   eastus       Standard_E16-8s_v5     1,2,3    None
+virtualMachines   eastus       Standard_E16ads_v5     1,2,3    None
+virtualMachines   eastus       Standard_E16as_v4      1,2,3    None
+virtualMachines   eastus       Standard_E16as_v5      1,2,3    None
+virtualMachines   eastus       Standard_E16a_v4       1,2,3    None
+virtualMachines   eastus       Standard_E16bds_v5     1,2,3    None
+virtualMachines   eastus       Standard_E16bs_v5      1,2,3    None
+virtualMachines   eastus       Standard_E16ds_v4      1,2,3    None
+virtualMachines   eastus       Standard_E16ds_v5      1,2,3    None
+virtualMachines   eastus       Standard_E16d_v4       1,2,3    None
+virtualMachines   eastus       Standard_E16d_v5       1,2,3    None
+virtualMachines   eastus       Standard_E16s_v3       1,2,3    None
+virtualMachines   eastus       Standard_E16s_v4       1,2,3    None
+virtualMachines   eastus       Standard_E16s_v5       1,2,3    None
+virtualMachines   eastus       Standard_E16_v3        1,2,3    None
+virtualMachines   eastus       Standard_E16_v4        1,2,3    None
+virtualMachines   eastus       Standard_E16_v5        1,2,3    None
+virtualMachines   eastus       Standard_E20ads_v5     1,2,3    None
+virtualMachines   eastus       Standard_E20as_v4      1,2,3    None
+virtualMachines   eastus       Standard_E20as_v5      1,2,3    None
+virtualMachines   eastus       Standard_E20a_v4       1,2,3    None
+virtualMachines   eastus       Standard_E20ds_v4      1,2,3    None
+virtualMachines   eastus       Standard_E20ds_v5      1,2,3    None
+virtualMachines   eastus       Standard_E20d_v4       1,2,3    None
+virtualMachines   eastus       Standard_E20d_v5       1,2,3    None
+virtualMachines   eastus       Standard_E20s_v3       1,2,3    None
+virtualMachines   eastus       Standard_E20s_v4       1,2,3    None
+virtualMachines   eastus       Standard_E20s_v5       1,2,3    None
+virtualMachines   eastus       Standard_E20_v3        1,2,3    None
+virtualMachines   eastus       Standard_E20_v4        1,2,3    None
+virtualMachines   eastus       Standard_E20_v5        1,2,3    None
+virtualMachines   eastus       Standard_E2ads_v5      1,2,3    None
+virtualMachines   eastus       Standard_E2as_v4       1,2,3    None
+virtualMachines   eastus       Standard_E2as_v5       1,2,3    None
+virtualMachines   eastus       Standard_E2a_v4        1,2,3    None
+virtualMachines   eastus       Standard_E2bds_v5      1,2,3    None
+virtualMachines   eastus       Standard_E2bs_v5       1,2,3    None
+virtualMachines   eastus       Standard_E2ds_v4       1,2,3    None
+virtualMachines   eastus       Standard_E2ds_v5       1,2,3    None
+virtualMachines   eastus       Standard_E2d_v4        1,2,3    None
+virtualMachines   eastus       Standard_E2d_v5        1,2,3    None
+virtualMachines   eastus       Standard_E2s_v3        1,2,3    None
+virtualMachines   eastus       Standard_E2s_v4        1,2,3    None
+virtualMachines   eastus       Standard_E2s_v5        1,2,3    None
+virtualMachines   eastus       Standard_E2_v3         1,2,3    None
+virtualMachines   eastus       Standard_E2_v4         1,2,3    None
+virtualMachines   eastus       Standard_E2_v5         1,2,3    None
+virtualMachines   eastus       Standard_E32-16ads_v5  1,2,3    None
+virtualMachines   eastus       Standard_E32-16as_v4   1,2,3    None
+virtualMachines   eastus       Standard_E32-16as_v5   1,2,3    None
+virtualMachines   eastus       Standard_E32-16ds_v4   1,2,3    None
+virtualMachines   eastus       Standard_E32-16ds_v5   1,2,3    None
+virtualMachines   eastus       Standard_E32-16s_v3    1,2,3    None
+virtualMachines   eastus       Standard_E32-16s_v4    1,2,3    None
+virtualMachines   eastus       Standard_E32-16s_v5    1,2,3    None
+virtualMachines   eastus       Standard_E32-8ads_v5   1,2,3    None
+virtualMachines   eastus       Standard_E32-8as_v4    1,2,3    None
+virtualMachines   eastus       Standard_E32-8as_v5    1,2,3    None
+virtualMachines   eastus       Standard_E32-8ds_v4    1,2,3    None
+virtualMachines   eastus       Standard_E32-8ds_v5    1,2,3    None
+virtualMachines   eastus       Standard_E32-8s_v3     1,2,3    None
+virtualMachines   eastus       Standard_E32-8s_v4     1,2,3    None
+virtualMachines   eastus       Standard_E32-8s_v5     1,2,3    None
+virtualMachines   eastus       Standard_E32ads_v5     1,2,3    None
+virtualMachines   eastus       Standard_E32as_v4      1,2,3    None
+virtualMachines   eastus       Standard_E32as_v5      1,2,3    None
+virtualMachines   eastus       Standard_E32a_v4       1,2,3    None
+virtualMachines   eastus       Standard_E32bds_v5     1,2,3    None
+virtualMachines   eastus       Standard_E32bs_v5      1,2,3    None
+virtualMachines   eastus       Standard_E32ds_v4      1,2,3    None
+virtualMachines   eastus       Standard_E32ds_v5      1,2,3    None
+virtualMachines   eastus       Standard_E32d_v4       1,2,3    None
+virtualMachines   eastus       Standard_E32d_v5       1,2,3    None
+virtualMachines   eastus       Standard_E32s_v3       1,2,3    None
+virtualMachines   eastus       Standard_E32s_v4       1,2,3    None
+virtualMachines   eastus       Standard_E32s_v5       1,2,3    None
+virtualMachines   eastus       Standard_E32_v3        1,2,3    None
+virtualMachines   eastus       Standard_E32_v4        1,2,3    None
+virtualMachines   eastus       Standard_E32_v5        1,2,3    None
+virtualMachines   eastus       Standard_E4-2ads_v5    1,2,3    None
+virtualMachines   eastus       Standard_E4-2as_v4     1,2,3    None
+virtualMachines   eastus       Standard_E4-2as_v5     1,2,3    None
+virtualMachines   eastus       Standard_E4-2ds_v4     1,2,3    None
+virtualMachines   eastus       Standard_E4-2ds_v5     1,2,3    None
+virtualMachines   eastus       Standard_E4-2s_v3      1,2,3    None
+virtualMachines   eastus       Standard_E4-2s_v4      1,2,3    None
+virtualMachines   eastus       Standard_E4-2s_v5      1,2,3    None
+virtualMachines   eastus       Standard_E48ads_v5     1,2,3    None
+virtualMachines   eastus       Standard_E48as_v4      1,2,3    None
+virtualMachines   eastus       Standard_E48as_v5      1,2,3    None
+virtualMachines   eastus       Standard_E48a_v4       1,2,3    None
+virtualMachines   eastus       Standard_E48bds_v5     1,2,3    None
+virtualMachines   eastus       Standard_E48bs_v5      1,2,3    None
+virtualMachines   eastus       Standard_E48ds_v4      1,2,3    None
+virtualMachines   eastus       Standard_E48ds_v5      1,2,3    None
+virtualMachines   eastus       Standard_E48d_v4       1,2,3    None
+virtualMachines   eastus       Standard_E48d_v5       1,2,3    None
+virtualMachines   eastus       Standard_E48s_v3       1,2,3    None
+virtualMachines   eastus       Standard_E48s_v4       1,2,3    None
+virtualMachines   eastus       Standard_E48s_v5       1,2,3    None
+virtualMachines   eastus       Standard_E48_v3        1,2,3    None
+virtualMachines   eastus       Standard_E48_v4        1,2,3    None
+virtualMachines   eastus       Standard_E48_v5        1,2,3    None
+virtualMachines   eastus       Standard_E4ads_v5      1,2,3    None
+virtualMachines   eastus       Standard_E4as_v4       1,2,3    None
+virtualMachines   eastus       Standard_E4as_v5       1,2,3    None
+virtualMachines   eastus       Standard_E4a_v4        1,2,3    None
+virtualMachines   eastus       Standard_E4bds_v5      1,2,3    None
+virtualMachines   eastus       Standard_E4bs_v5       1,2,3    None
+virtualMachines   eastus       Standard_E4ds_v4       1,2,3    None
+virtualMachines   eastus       Standard_E4ds_v5       1,2,3    None
+virtualMachines   eastus       Standard_E4d_v4        1,2,3    None
+virtualMachines   eastus       Standard_E4d_v5        1,2,3    None
+virtualMachines   eastus       Standard_E4s_v3        1,2,3    None
+virtualMachines   eastus       Standard_E4s_v4        1,2,3    None
+virtualMachines   eastus       Standard_E4s_v5        1,2,3    None
+virtualMachines   eastus       Standard_E4_v3         1,2,3    None
+virtualMachines   eastus       Standard_E4_v4         1,2,3    None
+virtualMachines   eastus       Standard_E4_v5         1,2,3    None
+virtualMachines   eastus       Standard_E64-16ads_v5  1,2,3    None
+virtualMachines   eastus       Standard_E64-16as_v4   1,2,3    None
+virtualMachines   eastus       Standard_E64-16as_v5   1,2,3    None
+virtualMachines   eastus       Standard_E64-16ds_v4   1,2,3    None
+virtualMachines   eastus       Standard_E64-16ds_v5   1,2,3    None
+virtualMachines   eastus       Standard_E64-16s_v3    1,2,3    None
+virtualMachines   eastus       Standard_E64-16s_v4    1,2,3    None
+virtualMachines   eastus       Standard_E64-16s_v5    1,2,3    None
+virtualMachines   eastus       Standard_E64-32ads_v5  1,2,3    None
+virtualMachines   eastus       Standard_E64-32as_v4   1,2,3    None
+virtualMachines   eastus       Standard_E64-32as_v5   1,2,3    None
+virtualMachines   eastus       Standard_E64-32ds_v4   1,2,3    None
+virtualMachines   eastus       Standard_E64-32ds_v5   1,2,3    None
+virtualMachines   eastus       Standard_E64-32s_v3    1,2,3    None
+virtualMachines   eastus       Standard_E64-32s_v4    1,2,3    None
+virtualMachines   eastus       Standard_E64-32s_v5    1,2,3    None
+virtualMachines   eastus       Standard_E64ads_v5     1,2,3    None
+virtualMachines   eastus       Standard_E64as_v4      1,2,3    None
+virtualMachines   eastus       Standard_E64as_v5      1,2,3    None
+virtualMachines   eastus       Standard_E64a_v4       1,2,3    None
+virtualMachines   eastus       Standard_E64bds_v5     1,2,3    None
+virtualMachines   eastus       Standard_E64bs_v5      1,2,3    None
+virtualMachines   eastus       Standard_E64ds_v4      1,2,3    None
+virtualMachines   eastus       Standard_E64ds_v5      1,2,3    None
+virtualMachines   eastus       Standard_E64d_v4       1,2,3    None
+virtualMachines   eastus       Standard_E64d_v5       1,2,3    None
+virtualMachines   eastus       Standard_E64is_v3      1,2,3    None
+virtualMachines   eastus       Standard_E64i_v3       1,2,3    None
+virtualMachines   eastus       Standard_E64s_v3       1,2,3    None
+virtualMachines   eastus       Standard_E64s_v4       1,2,3    None
+virtualMachines   eastus       Standard_E64s_v5       1,2,3    None
+virtualMachines   eastus       Standard_E64_v3        1,2,3    None
+virtualMachines   eastus       Standard_E64_v4        1,2,3    None
+virtualMachines   eastus       Standard_E64_v5        1,2,3    None
+virtualMachines   eastus       Standard_E8-2ads_v5    1,2,3    None
+virtualMachines   eastus       Standard_E8-2as_v4     1,2,3    None
+virtualMachines   eastus       Standard_E8-2as_v5     1,2,3    None
+virtualMachines   eastus       Standard_E8-2ds_v4     1,2,3    None
+virtualMachines   eastus       Standard_E8-2ds_v5     1,2,3    None
+virtualMachines   eastus       Standard_E8-2s_v3      1,2,3    None
+virtualMachines   eastus       Standard_E8-2s_v4      1,2,3    None
+virtualMachines   eastus       Standard_E8-2s_v5      1,2,3    None
+virtualMachines   eastus       Standard_E8-4ads_v5    1,2,3    None
+virtualMachines   eastus       Standard_E8-4as_v4     1,2,3    None
+virtualMachines   eastus       Standard_E8-4as_v5     1,2,3    None
+virtualMachines   eastus       Standard_E8-4ds_v4     1,2,3    None
+virtualMachines   eastus       Standard_E8-4ds_v5     1,2,3    None
+virtualMachines   eastus       Standard_E8-4s_v3      1,2,3    None
+virtualMachines   eastus       Standard_E8-4s_v4      1,2,3    None
+virtualMachines   eastus       Standard_E8-4s_v5      1,2,3    None
+virtualMachines   eastus       Standard_E80ids_v4     1,2,3    None
+virtualMachines   eastus       Standard_E80is_v4      1,2,3    None
+virtualMachines   eastus       Standard_E8ads_v5      1,2,3    None
+virtualMachines   eastus       Standard_E8as_v4       1,2,3    None
+virtualMachines   eastus       Standard_E8as_v5       1,2,3    None
+virtualMachines   eastus       Standard_E8a_v4        1,2,3    None
+virtualMachines   eastus       Standard_E8bds_v5      1,2,3    None
+virtualMachines   eastus       Standard_E8bs_v5       1,2,3    None
+virtualMachines   eastus       Standard_E8ds_v4       1,2,3    None
+virtualMachines   eastus       Standard_E8ds_v5       1,2,3    None
+virtualMachines   eastus       Standard_E8d_v4        1,2,3    None
+virtualMachines   eastus       Standard_E8d_v5        1,2,3    None
+virtualMachines   eastus       Standard_E8s_v3        1,2,3    None
+virtualMachines   eastus       Standard_E8s_v4        1,2,3    None
+virtualMachines   eastus       Standard_E8s_v5        1,2,3    None
+virtualMachines   eastus       Standard_E8_v3         1,2,3    None
+virtualMachines   eastus       Standard_E8_v4         1,2,3    None
+virtualMachines   eastus       Standard_E8_v5         1,2,3    None
+virtualMachines   eastus       Standard_E96-24ads_v5  1,2,3    None
+virtualMachines   eastus       Standard_E96-24as_v4   1,2,3    None
+virtualMachines   eastus       Standard_E96-24as_v5   1,2,3    None
+virtualMachines   eastus       Standard_E96-24ds_v5   1,2,3    None
+virtualMachines   eastus       Standard_E96-24s_v5    1,2,3    None
+virtualMachines   eastus       Standard_E96-48ads_v5  1,2,3    None
+virtualMachines   eastus       Standard_E96-48as_v4   1,2,3    None
+virtualMachines   eastus       Standard_E96-48as_v5   1,2,3    None
+virtualMachines   eastus       Standard_E96-48ds_v5   1,2,3    None
+virtualMachines   eastus       Standard_E96-48s_v5    1,2,3    None
+virtualMachines   eastus       Standard_E96ads_v5     1,2,3    None
+virtualMachines   eastus       Standard_E96as_v4      1,2,3    None
+virtualMachines   eastus       Standard_E96as_v5      1,2,3    None
+virtualMachines   eastus       Standard_E96a_v4       1,2,3    None
+virtualMachines   eastus       Standard_E96ds_v5      1,2,3    None
+virtualMachines   eastus       Standard_E96d_v5       1,2,3    None
+virtualMachines   eastus       Standard_E96ias_v4     1,2,3    None
+virtualMachines   eastus       Standard_E96s_v5       1,2,3    None
+virtualMachines   eastus       Standard_E96_v5        1,2,3    None
+virtualMachines   eastus       Standard_EC16ads_v5    2        None
+virtualMachines   eastus       Standard_EC16as_v5     2        None
+virtualMachines   eastus       Standard_EC20ads_v5    2        None
+virtualMachines   eastus       Standard_EC20as_v5     2        None
+virtualMachines   eastus       Standard_EC2ads_v5     2        None
+virtualMachines   eastus       Standard_EC2as_v5      2        None
+virtualMachines   eastus       Standard_EC32ads_v5    2        None
+virtualMachines   eastus       Standard_EC32as_v5     2        None
+virtualMachines   eastus       Standard_EC48ads_v5    2        None
+virtualMachines   eastus       Standard_EC48as_v5     2        None
+virtualMachines   eastus       Standard_EC4ads_v5     2        None
+virtualMachines   eastus       Standard_EC4as_v5      2        None
+virtualMachines   eastus       Standard_EC64ads_v5    2        None
+virtualMachines   eastus       Standard_EC64as_v5     2        None
+virtualMachines   eastus       Standard_EC8ads_v5     2        None
+virtualMachines   eastus       Standard_EC8as_v5      2        None
+virtualMachines   eastus       Standard_EC96ads_v5    2        None
+virtualMachines   eastus       Standard_EC96as_v5     2        None
+virtualMachines   eastus       Standard_EC96iads_v5   2        None
+virtualMachines   eastus       Standard_EC96ias_v5    2        None
+virtualMachines   eastus       Standard_F1            1,2,3    None
+virtualMachines   eastus       Standard_F16           1,2,3    None
+virtualMachines   eastus       Standard_F16s          1,2,3    None
+virtualMachines   eastus       Standard_F16s_v2       1,2,3    None
+virtualMachines   eastus       Standard_F1s           1,2,3    None
+virtualMachines   eastus       Standard_F2            1,2,3    None
+virtualMachines   eastus       Standard_F2s           1,2,3    None
+virtualMachines   eastus       Standard_F2s_v2        1,2,3    None
+virtualMachines   eastus       Standard_F32s_v2       1,2,3    None
+virtualMachines   eastus       Standard_F4            1,2,3    None
+virtualMachines   eastus       Standard_F48s_v2       1,2,3    None
+virtualMachines   eastus       Standard_F4s           1,2,3    None
+virtualMachines   eastus       Standard_F4s_v2        1,2,3    None
+virtualMachines   eastus       Standard_F64s_v2       1,2,3    None
+virtualMachines   eastus       Standard_F72s_v2       1,2,3    None
+virtualMachines   eastus       Standard_F8            1,2,3    None
+virtualMachines   eastus       Standard_F8s           1,2,3    None
+virtualMachines   eastus       Standard_F8s_v2        1,2,3    None
+virtualMachines   eastus       Standard_FX12mds       1        None
+virtualMachines   eastus       Standard_FX24mds       1        None
+virtualMachines   eastus       Standard_FX36mds       1        None
+virtualMachines   eastus       Standard_FX48mds       1        None
+virtualMachines   eastus       Standard_FX4mds        1        None
+virtualMachines   eastus       Standard_HB120rs_v2    3        None
+virtualMachines   eastus       Standard_L16as_v3      2,3      None
+virtualMachines   eastus       Standard_L16s_v3       1,2,3    None
+virtualMachines   eastus       Standard_L32as_v3      2,3      None
+virtualMachines   eastus       Standard_L32s_v3       1,2,3    None
+virtualMachines   eastus       Standard_L48as_v3      2,3      None
+virtualMachines   eastus       Standard_L48s_v3       1,2,3    None
+virtualMachines   eastus       Standard_L64as_v3      2,3      None
+virtualMachines   eastus       Standard_L64s_v3       1,2,3    None
+virtualMachines   eastus       Standard_L80as_v3      2,3      None
+virtualMachines   eastus       Standard_L80s_v3       1,2,3    None
+virtualMachines   eastus       Standard_L8as_v3       2,3      None
+virtualMachines   eastus       Standard_L8s_v3        1,2,3    None
+PS C:\lab\az104\Labs\04> 
+
+
+PS C:\lab\az104\Labs\04> az vm list-skus --location eastus -o table --query "[? contains(name, 'Standard_D2s')].name"
+Result
+---------------
+Standard_D2s_v3
+Standard_D2s_v4
+Standard_D2s_v5
+
+---------------------------------------------------------------------------------
+
+C:\Users\Student>ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : az104-04-vm0
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : ihclywv3phkevnauxurqd232dc.bx.internal.cloudapp.net
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : ihclywv3phkevnauxurqd232dc.bx.internal.cloudapp.net
+   Description . . . . . . . . . . . : Microsoft Hyper-V Network Adapter
+   Physical Address. . . . . . . . . : 00-22-48-2C-2E-5B
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::a986:c28d:63e8:154e%6(Preferred)
+   IPv4 Address. . . . . . . . . . . : 10.40.0.4(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Thursday, June 23, 2022 6:55:34 PM
+   Lease Expires . . . . . . . . . . : Monday, July 31, 2158 1:26:37 AM
+   Default Gateway . . . . . . . . . : 10.40.0.1
+   DHCP Server . . . . . . . . . . . : 168.63.129.16
+   DHCPv6 IAID . . . . . . . . . . . : 100672072
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-46-03-D3-00-22-48-2C-2E-5B
+   DNS Servers . . . . . . . . . . . : 168.63.129.16
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+
+C:\Users\Student>arp -a
+
+Interface: 10.40.0.4 --- 0x6
+  Internet Address      Physical Address      Type
+  10.40.0.1             12-34-56-78-9a-bc     dynamic
+  10.40.0.255           ff-ff-ff-ff-ff-ff     static
+  224.0.0.22            01-00-5e-00-00-16     static
+  224.0.0.251           01-00-5e-00-00-fb     static
+  224.0.0.252           01-00-5e-00-00-fc     static
+  239.255.255.250       01-00-5e-7f-ff-fa     static
+  255.255.255.255       ff-ff-ff-ff-ff-ff     static
+
+
+  ==================================================================
+  C:\Users\Student>ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : az104-04-vm1
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : ihclywv3phkevnauxurqd232dc.bx.internal.cloudapp.net
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : ihclywv3phkevnauxurqd232dc.bx.internal.cloudapp.net
+   Description . . . . . . . . . . . : Microsoft Hyper-V Network Adapter
+   Physical Address. . . . . . . . . : 00-22-48-31-80-19
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::ed02:f05f:2d07:b272%6(Preferred)
+   IPv4 Address. . . . . . . . . . . : 10.40.1.4(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Thursday, June 23, 2022 6:55:45 PM
+   Lease Expires . . . . . . . . . . : Monday, July 31, 2158 1:31:48 AM
+   Default Gateway . . . . . . . . . : 10.40.1.1
+   DHCP Server . . . . . . . . . . . : 168.63.129.16
+   DHCPv6 IAID . . . . . . . . . . . : 100672072
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-46-05-D2-00-22-48-31-80-19
+   DNS Servers . . . . . . . . . . . : 168.63.129.16
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+C:\Users\Student>arp -a
+
+Interface: 10.40.1.4 --- 0x6
+  Internet Address      Physical Address      Type
+  10.40.1.1             12-34-56-78-9a-bc     dynamic
+  10.40.1.255           ff-ff-ff-ff-ff-ff     static
+  224.0.0.22            01-00-5e-00-00-16     static
+  224.0.0.251           01-00-5e-00-00-fb     static
+  224.0.0.252           01-00-5e-00-00-fc     static
+  239.255.255.250       01-00-5e-7f-ff-fa     static
+  255.255.255.255       ff-ff-ff-ff-ff-ff     static
+
+  

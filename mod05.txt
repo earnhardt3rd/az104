@@ -619,3 +619,28 @@ SourceAddress           : 10.51.0.4
 NetRoute (NextHop)      : 10.51.0.1
 TcpTestSucceeded        : True
 
+
+===============================================================================================================
+CLEAN UP
+===============================================================================================================
+PS /home/frank> Get-AzResourceGroup -Name 'az104-05*'                                     
+
+ResourceGroupName : az104-05-rg1
+Location          : eastus
+ProvisioningState : Succeeded
+Tags              : 
+ResourceId        : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-05-rg1
+
+
+PS /home/frank> Get-AzResourceGroup -Name 'az104-05*' | Remove-AzResourceGroup -Force -AsJob
+
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
+2      Long Running O… AzureLongRunni… Running       True            localhost            Remove-AzResourceGroup
+
+PS /home/frank> 
+
+
+
+https://docs.microsoft.com/en-us/azure/virtual-wan/virtual-wan-about?WT.mc_id=Portal-Microsoft_Azure_HybridNetworking
+

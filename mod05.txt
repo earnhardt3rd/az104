@@ -645,3 +645,13 @@ PS /home/frank>
 https://docs.microsoft.com/en-us/azure/virtual-wan/virtual-wan-about?WT.mc_id=Portal-Microsoft_Azure_HybridNetworking
 https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways?WT.mc_id=Portal-Microsoft_Azure_HybridNetworking
 https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings#gwtype
+
+
+STORAGE:
+cs710032001db4df1f5
+KEY1
+kT+qpmZW93cfnqGt4NoVUg8V+4cfHrcpIH1m1C10LnrUYfds21cUoUkfgVOi1Y9ZAcdR3beBnXZP+AStPYfEDA==
+DefaultEndpointsProtocol=https;AccountName=cs710032001db4df1f5;AccountKey=kT+qpmZW93cfnqGt4NoVUg8V+4cfHrcpIH1m1C10LnrUYfds21cUoUkfgVOi1Y9ZAcdR3beBnXZP+AStPYfEDA==;EndpointSuffix=core.windows.net
+KEY2
+BNfnDq0N1+dBgMM/TZd6mp5oEPk3ZwZCeay4sYdnbq1CM7dSosC/gqFNNtnQP5gCdfNKwXkh0kig+AStORI6eg==
+DefaultEndpointsProtocol=https;AccountName=cs710032001db4df1f5;AccountKey=BNfnDq0N1+dBgMM/TZd6mp5oEPk3ZwZCeay4sYdnbq1CM7dSosC/gqFNNtnQP5gCdfNKwXkh0kig+AStORI6eg==;EndpointSuffix=core.windows.net

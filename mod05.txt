@@ -643,4 +643,5 @@ PS /home/frank>
 
 
 https://docs.microsoft.com/en-us/azure/virtual-wan/virtual-wan-about?WT.mc_id=Portal-Microsoft_Azure_HybridNetworking
-
+https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways?WT.mc_id=Portal-Microsoft_Azure_HybridNetworking
+https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings#gwtype

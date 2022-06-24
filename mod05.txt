@@ -512,3 +512,110 @@ PS C:\lab\az104\Labs\05> az resource list
 ================================================================================
 Configure local and Global virtual network peering
 ================================================================================
+03A-PeeringNetwork-vnet0-2-vnet1.ps1 ~ Creates two peers: 0 -> 1 & 1 -> 0
+03A-PeeringNetwork-vnet0-2-vnet2.ps1 ~ Creates two peers: 0 -> 2 & 2 -> 0
+03A-PeeringNetwork-vnet1-2-vnet2.ps1 ~ Creates two peers: 1 -> 2 & 2 -> 1
+================================================================================
+TEST COnnectivity
+================================================================================
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\Student> Test-NetConnection -ComputerName 10.51.0.4 -Port 3389 -InformationLevel 'Detailed'
+
+
+ComputerName            : 10.51.0.4
+RemoteAddress           : 10.51.0.4
+RemotePort              : 3389
+NameResolutionResults   : 10.51.0.4
+MatchingIPsecRules      :
+NetworkIsolationContext : Internet
+InterfaceAlias          : Ethernet
+SourceAddress           : 10.50.0.4
+NetRoute (NextHop)      : 10.50.0.1
+TcpTestSucceeded        : True
+
+
+
+PS C:\Users\Student> hostname
+az104-05-vm0
+PS C:\Users\Student>
+PS C:\Users\Student> Test-NetConnection -ComputerName 10.52.0.4 -Port 3389 -InformationLevel 'Detailed'
+
+
+ComputerName            : 10.52.0.4
+RemoteAddress           : 10.52.0.4
+RemotePort              : 3389
+NameResolutionResults   : 10.52.0.4
+MatchingIPsecRules      :
+NetworkIsolationContext : Internet
+InterfaceAlias          : Ethernet
+SourceAddress           : 10.50.0.4
+NetRoute (NextHop)      : 10.50.0.1
+TcpTestSucceeded        : True
+
+===============================================================================
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\Student> hostname
+az104-05-vm1
+PS C:\Users\Student> Test-NetConnection -ComputerName 10.52.0.4 -Port 3389 -InformationLevel 'Detailed'
+
+
+ComputerName            : 10.52.0.4
+RemoteAddress           : 10.52.0.4
+RemotePort              : 3389
+NameResolutionResults   : 10.52.0.4
+MatchingIPsecRules      :
+NetworkIsolationContext : Internet
+InterfaceAlias          : Ethernet
+SourceAddress           : 10.51.0.4
+NetRoute (NextHop)      : 10.51.0.1
+TcpTestSucceeded        : True
+
+
+
+PS C:\Users\Student> ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : az104-05-vm1
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : qhnarmngzu3ufkfeib1cq5dyob.bx.internal.cloudapp.net
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : qhnarmngzu3ufkfeib1cq5dyob.bx.internal.cloudapp.net
+   Description . . . . . . . . . . . : Microsoft Hyper-V Network Adapter
+   Physical Address. . . . . . . . . : 00-22-48-2F-0D-D3
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::1126:5c34:b953:535f%6(Preferred)
+   IPv4 Address. . . . . . . . . . . : 10.51.0.4(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Friday, June 24, 2022 5:52:47 PM
+   Lease Expires . . . . . . . . . . : Tuesday, August 1, 2158 12:53:11 AM
+   Default Gateway . . . . . . . . . : 10.51.0.1
+   DHCP Server . . . . . . . . . . . : 168.63.129.16
+   DHCPv6 IAID . . . . . . . . . . . : 100672072
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-47-43-C7-00-22-48-2F-0D-D3
+   DNS Servers . . . . . . . . . . . : 168.63.129.16
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+PS C:\Users\Student> Test-NetConnection -ComputerName 10.50.0.4 -Port 3389 -InformationLevel 'Detailed'
+
+
+ComputerName            : 10.50.0.4
+RemoteAddress           : 10.50.0.4
+RemotePort              : 3389
+NameResolutionResults   : 10.50.0.4
+MatchingIPsecRules      :
+NetworkIsolationContext : Internet
+InterfaceAlias          : Ethernet
+SourceAddress           : 10.51.0.4
+NetRoute (NextHop)      : 10.51.0.1
+TcpTestSucceeded        : True
+

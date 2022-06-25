@@ -2,3 +2,210 @@ Promo:QGE47M2TJDMVOUXCKC
 
 User:Admin
 Pass"Pa55w.rd
+========================================================================
+Task 1: Provision Resources
+========================================================================
+PS /home/frank> ./01-create-resourceGroup.ps1
+
+ResourceGroupName : az104-06-rg1
+Location          : eastus
+ProvisioningState : Succeeded
+Tags              : 
+ResourceId        : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-06-rg1
+
+PS /home/frank> ./02-deployTemplate.ps1
+
+DeploymentName          : az104-06-vms-loop-template
+ResourceGroupName       : az104-06-rg1
+ProvisioningState       : Succeeded
+Timestamp               : 6/25/2022 6:01:10 PM
+Mode                    : Incremental
+TemplateLink            : 
+Parameters              : 
+                          Name             Type                       Value     
+                          ===============  =========================  ==========
+                          vmSize           String                     "Standard_D2s_v3"
+                          vmName           String                     "az104-06-vm"
+                          vmCount          Int                        4         
+                          adminUsername    String                     "Student" 
+                          adminPassword    SecureString               null      
+                          
+Outputs                 : 
+DeploymentDebugLogLevel : 
+
+
+$rgName = 'az104-06-rg1'
+$location = (Get-AzResourceGroup -ResourceGroupName $rgName).location
+$vmNames = (Get-AzVM -ResourceGroupName $rgName).Name
+
+foreach ($vmName in $vmNames) {
+    Set-AzVMExtension `
+    -ResourceGroupName $rgName `
+    -Location $location `
+    -VMName $vmName `
+    -Name 'networkWatcherAgent' `
+    -Publisher 'Microsoft.Azure.NetworkWatcher' `
+    -Type 'NetworkWatcherAgentWindows' `
+    -TypeHandlerVersion '1.4'
+}
+
+PS /home/frank> ./03-netWatcher.ps1
+
+RequestId IsSuccessStatusCode StatusCode ReasonPhrase
+--------- ------------------- ---------- ------------
+                         True         OK OK
+                         True         OK OK
+                         True         OK OK
+                         True         OK OK
+
+PS /home/frank> 
+
+=============================================================================
+Task 2: Configure the hub and spoke network topology
+=============================================================================
+Name:az104-06-vnet01
+Location:eastus
+Resource group:az104-06-rg1
+Subscription ID:b10fbc3d-9183-45a5-9ea5-54734bfd3ba7
+Resource ID:/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-06-rg1/providers/Microsoft.Network/virtualNetworks/az104-06-vnet01
+Resource GUID:97a14456-2b22-4540-8b37-93b143597563
+
+Name: az104-06-vnet2
+Location:eastus
+Resource group:az104-06-rg1
+Subscription ID:b10fbc3d-9183-45a5-9ea5-54734bfd3ba7
+Resource ID: /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-06-rg1/providers/Microsoft.Network/virtualNetworks/az104-06-vnet2
+Resource GUID: 166005c1-94d6-4f22-b967-3667cd0e4f2b
+
+Name:az104-06-vnet3
+Location:eastus
+Resource group:az104-06-rg1
+Subscription ID:b10fbc3d-9183-45a5-9ea5-54734bfd3ba7
+Resource ID:/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-06-rg1/providers/Microsoft.Network/virtualNetworks/az104-06-vnet3
+Resource GUID:a208d9b3-3d37-4b75-a17a-ee52ffb26aef
+
+
+
+=============================================================================================================================
+PS /home/frank> ./04A-PeeringNetwork-vnet01-to-vnet2.ps1
+
+Name                             : az104-06-vnet01_to_az104-06-vnet2
+Id                               : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-06-rg1/providers/Microsoft.Network/virtualNetworks/az104-06-vnet01/virtualNetworkPeering
+                                   s/az104-06-vnet01_to_az104-06-vnet2
+Etag                             : W/"0a5883ff-934b-448b-ae1d-67b72777941d"
+ResourceGroupName                : az104-06-rg1
+VirtualNetworkName               : az104-06-vnet01
+PeeringSyncLevel                 : RemoteNotInSync
+PeeringState                     : Initiated
+ProvisioningState                : Succeeded
+RemoteVirtualNetwork             : {
+                                     "Id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-06-rg1/providers/Microsoft.Network/virtualNetworks/az104-06-vnet2"
+                                   }
+AllowVirtualNetworkAccess        : True
+AllowForwardedTraffic            : False
+AllowGatewayTransit              : False
+UseRemoteGateways                : False
+RemoteGateways                   : null
+PeeredRemoteAddressSpace         : {
+                                     "AddressPrefixes": [
+                                       "10.62.0.0/22"
+                                     ]
+                                   }
+RemoteVirtualNetworkAddressSpace : {
+                                     "AddressPrefixes": [
+                                       "10.62.0.0/22"
+                                     ]
+                                   }
+
+Name                             : az104-06-vnet2_to_az104-06-vnet01
+Id                               : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-06-rg1/providers/Microsoft.Network/virtualNetworks/az104-06-vnet2/virtualNetworkPeerings
+                                   /az104-06-vnet2_to_az104-06-vnet01
+Etag                             : W/"073198fa-5041-4e80-9892-45faf3541acd"
+ResourceGroupName                : az104-06-rg1
+VirtualNetworkName               : az104-06-vnet2
+PeeringSyncLevel                 : FullyInSync
+PeeringState                     : Connected
+ProvisioningState                : Succeeded
+RemoteVirtualNetwork             : {
+                                     "Id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-06-rg1/providers/Microsoft.Network/virtualNetworks/az104-06-vnet01"
+                                   }
+AllowVirtualNetworkAccess        : True
+AllowForwardedTraffic            : False
+AllowGatewayTransit              : False
+UseRemoteGateways                : False
+RemoteGateways                   : null
+PeeredRemoteAddressSpace         : {
+                                     "AddressPrefixes": [
+                                       "10.60.0.0/22"
+                                     ]
+                                   }
+RemoteVirtualNetworkAddressSpace : {
+                                     "AddressPrefixes": [
+                                       "10.60.0.0/22"
+                                     ]
+                                   }
+
+
+----------------------------------------------------------------------------
+PS /home/frank> ./04B-PeeringNetwork-vnet01-to-vnet3.ps1
+
+Name                             : az104-06-vnet01_to_az104-06-vnet3
+Id                               : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-06-rg1/providers/Microsoft.Network/virtualNetworks/az104-06-vnet01/virtualNetworkPeering
+                                   s/az104-06-vnet01_to_az104-06-vnet3
+Etag                             : W/"1fbbe32a-fca3-472a-96a2-73631cf9a000"
+ResourceGroupName                : az104-06-rg1
+VirtualNetworkName               : az104-06-vnet01
+PeeringSyncLevel                 : RemoteNotInSync
+PeeringState                     : Initiated
+ProvisioningState                : Succeeded
+RemoteVirtualNetwork             : {
+                                     "Id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-06-rg1/providers/Microsoft.Network/virtualNetworks/az104-06-vnet3"
+                                   }
+AllowVirtualNetworkAccess        : True
+AllowForwardedTraffic            : False
+AllowGatewayTransit              : False
+UseRemoteGateways                : False
+RemoteGateways                   : null
+PeeredRemoteAddressSpace         : {
+                                     "AddressPrefixes": [
+                                       "10.63.0.0/22"
+                                     ]
+                                   }
+RemoteVirtualNetworkAddressSpace : {
+                                     "AddressPrefixes": [
+                                       "10.63.0.0/22"
+                                     ]
+                                   }
+
+Name                             : az104-06-vnet3_to_az104-06-vnet01
+Id                               : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-06-rg1/providers/Microsoft.Network/virtualNetworks/az104-06-vnet3/virtualNetworkPeerings
+                                   /az104-06-vnet3_to_az104-06-vnet01
+Etag                             : W/"11a2c06b-1980-48b3-ba4a-893880082130"
+ResourceGroupName                : az104-06-rg1
+VirtualNetworkName               : az104-06-vnet3
+PeeringSyncLevel                 : FullyInSync
+PeeringState                     : Connected
+ProvisioningState                : Succeeded
+RemoteVirtualNetwork             : {
+                                     "Id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-06-rg1/providers/Microsoft.Network/virtualNetworks/az104-06-vnet01"
+                                   }
+AllowVirtualNetworkAccess        : True
+AllowForwardedTraffic            : False
+AllowGatewayTransit              : False
+UseRemoteGateways                : False
+RemoteGateways                   : null
+PeeredRemoteAddressSpace         : {
+                                     "AddressPrefixes": [
+                                       "10.60.0.0/22"
+                                     ]
+                                   }
+RemoteVirtualNetworkAddressSpace : {
+                                     "AddressPrefixes": [
+                                       "10.60.0.0/22"
+                                     ]
+                                   }
+
+
+==========================================================================================
+Task 3: Test transitivity of virtual networ peering
+==========================================================================================

@@ -217,3 +217,40 @@ vm2 -> 10.63.0.4 ~ NOT Reachable
 ==========================================================================================
 Task 4: Configure Routing in the hub and spoke topology
 ==========================================================================================
+Select az104-06-vm0 / Settings / Networking ~ Select az104-06-nic0 / Settings IP Configuration / Enable IP Forwarding : Save
+
+Select az104-06-vm0 / Operations Run Command / PowerShell: Install-WindowsFeature RemoteAccess -IncludeManagementTools
+Output:
+Success Restart Needed Exit Code      Feature Result                               
+------- -------------- ---------      --------------                               
+True    No             Success        {Remote Access}                              
+
+Once Completed Run:
+Install-WindowsFeature -Name Routing -IncludeManagementTools -IncludeAllSubFeature
+Install-WindowsFeature -Name "RSAT-RemoteAccess-Powershell"
+Install-RemoteAccess -VpnType RoutingOnly
+Get-NetAdapter | Set-NetIPInterface -Forwarding Enabled
+
+Output:
+Success Restart Needed Exit Code      Feature Result                               
+------- -------------- ---------      --------------                               
+True    No             Success        {RAS Connection Manager Administration Kit...
+True    No             NoChangeNeeded {}                                           
+
+---------------------------------------------------------------------------------------------
+Select Route Tables 
+
+Create Route Table ~ Propagate gateway routes:= NO
+    Open Resource: Add Route
+    IP Addresses: 10.63.0.0/20 
+    Nexthop Type: Virtual Applicance 10.60.0.4
+    --Associate az104-06-vnet2 subnet0
+
+Create Another Route Table  ~ Propagate gateway routes:= NO
+    Open Resource: Add Route
+    IP Addresses: 10.62.0.0/20 
+    Nexthop Type: Virtual Applicance 10.60.0.4
+    --Associate az104-06-vnet3 subnet0   
+
+
+

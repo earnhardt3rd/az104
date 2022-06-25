@@ -209,3 +209,11 @@ RemoteVirtualNetworkAddressSpace : {
 ==========================================================================================
 Task 3: Test transitivity of virtual networ peering
 ==========================================================================================
+Create Network Wacther - Connection Troubleshoot
+
+vm0 -> 10.62.0.4 ~ Reachable
+vm0 -> 10.63.0.4 ~ Reachable
+vm2 -> 10.63.0.4 ~ NOT Reachable
+==========================================================================================
+Task 4: Configure Routing in the hub and spoke topology
+==========================================================================================

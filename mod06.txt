@@ -252,5 +252,11 @@ Create Another Route Table  ~ Propagate gateway routes:= NO
     Nexthop Type: Virtual Applicance 10.60.0.4
     --Associate az104-06-vnet3 subnet0   
 
+==============================================================================================
+Task 5: Implement Azure Load Balancer
+==============================================================================================
 
+http://20.241.217.27/
+
+Hello World from az104-06-vm0
 

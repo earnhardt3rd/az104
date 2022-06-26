@@ -139,3 +139,49 @@ Open Storage az104-07-sawfe / Networking
 https://az10407sawfe.blob.core.windows.net/az104-07-container/licenses/LICENSE?sp=r&st=2022-06-25T17:13:05Z&se=2022-06-28T01:13:05Z&spr=https&sv=2021-06-08&sr=b&sig=pygYFWoE7ywpl9eWzYDl1iCO2VGebiaWFlETiAskJII%3D
 
 ** On MacBookPro - It was working and now I'm getting AuthorizationFailure
+
+
+
+
+
+**************
+** CLEAN UP **
+**************
+PS /home/frank> ./99_CleanUp.ps1
+
+ResourceGroupName : az104-07-rg1
+Location          : eastus
+ProvisioningState : Succeeded
+Tags              : 
+ResourceId        : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-07-rg1
+
+
+HasMoreData          : True
+Location             : localhost
+StatusMessage        : Running
+CurrentPSTransaction : 
+Host                 : System.Management.Automation.Internal.Host.InternalHost
+Command              : Remove-AzResourceGroup
+JobStateInfo         : Running
+Finished             : System.Threading.ManualResetEvent
+InstanceId           : 9ea897ef-ec9a-419b-a69c-dec626edaa12
+Id                   : 2
+Name                 : Long Running Operation for 'Remove-AzResourceGroup' on resource 'az104-07-rg1'
+ChildJobs            : {}
+PSBeginTime          : 6/26/2022 6:09:45 PM
+PSEndTime            : 
+PSJobTypeName        : AzureLongRunningJob`1
+Output               : {}
+Error                : {}
+Progress             : {}
+Verbose              : {}
+Debug                : {[AzureLongRunningJob]: Starting cmdlet execution, setting for cmdlet confirmation required: 'False'}
+Warning              : {}
+Information          : {}
+State                : Running
+
+ResourceGroupName : az104-07-rg1
+Location          : eastus
+ProvisioningState : Succeeded
+Tags              : 
+ResourceId        : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-07-rg1

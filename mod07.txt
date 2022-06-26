@@ -1,3 +1,6 @@
+=============================================================
+Task 1: Provision Lab
+=============================================================
 PS /home/frank> ./01-create-resourceGroup.ps1
 
 ResourceGroupName : az104-07-rg1
@@ -15,9 +18,123 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 2      Long Running O… AzureLongRunni… Running       True            localhost            New-AzResourceGroupDeplo…
 
 
-==========================================================
+============================================================
+Task 2: Create and configure Azure Storage accounts
+============================================================
+
+
+============================================================
+Task 3: Manage blob storage
+============================================================
+
+============================================================
+Task 4: Manage authentication and authorization for Azure Storage
+============================================================
+Create Storage Account / Then Create Container / Upload file
+Open File and Generate SAS:
+
 Blob SAS Token:sp=r&st=2022-06-25T17:13:05Z&se=2022-06-28T01:13:05Z&spr=https&sv=2021-06-08&sr=b&sig=pygYFWoE7ywpl9eWzYDl1iCO2VGebiaWFlETiAskJII%3D
-
-
 Blob SAS URL:https://az10407sawfe.blob.core.windows.net/az104-07-container/licenses/LICENSE?sp=r&st=2022-06-25T17:13:05Z&se=2022-06-28T01:13:05Z&spr=https&sv=2021-06-08&sr=b&sig=pygYFWoE7ywpl9eWzYDl1iCO2VGebiaWFlETiAskJII%3D
 
+============================================================
+Task 5: Create and configure Azure File Shares
+============================================================
+Open storage / File Shares / Add:
+
+
+ConnectionString:
+
+$connectTestResult = Test-NetConnection -ComputerName az10407sawfe.file.core.windows.net -Port 445
+if ($connectTestResult.TcpTestSucceeded) {
+    # Save the password so the drive will persist on reboot
+    cmd.exe /C "cmdkey /add:`"az10407sawfe.file.core.windows.net`" /user:`"localhost\az10407sawfe`" /pass:`"VIPkaIW4eUJSIPky/LWWbtnnP+zaOz+oilZQgc3qgpTmPH8FLdXlUnv9a7vFPxZ4XzeGgyBi6+bJ+AStwaalsQ==`""
+    # Mount the drive
+    New-PSDrive -Name Z -PSProvider FileSystem -Root "\\az10407sawfe.file.core.windows.net\az104-07-share" -Persist
+} else {
+    Write-Error -Message "Unable to reach the Azure storage account via port 445. Check to make sure your organization or ISP is not blocking port 445, or use Azure P2S VPN, Azure S2S VPN, or Express Route to tunnel SMB traffic over a different port."
+}
+
+
+Navigate to vm0 / Operations / Run Command / PowerShell
+<Paste above connectionString> ~ Run
+-------------------------------------------------------------------------------------------------------
+CMDKEY: Credential added successfully.
+
+Name           Used (GB)     Free (GB) Provider      Root                                               CurrentLocation
+----           ---------     --------- --------      ----                                               ---------------
+Z                   0.00       5120.00 FileSystem    \\az10407sawfe.file.core.windows...       
+-------------------------------------------------------------------------------------------------------
+
+In same window <Paste Over> and Run Following:
+New-Item -Type Directory -Path 'Z:\az104-07-folder'
+New-Item -Type File -Path 'Z:\az104-07-folder\az104-07-file.txt'
+-------------------------------------------------------------------------------------
+    Directory: Z:\
+
+
+Mode                LastWriteTime         Length Name                                                                  
+----                -------------         ------ ----                                                                  
+d-----        6/26/2022   5:39 PM                az104-07-folder                                                       
+
+
+    Directory: Z:\az104-07-folder
+
+
+Mode                LastWriteTime         Length Name                                                                  
+----                -------------         ------ ----                                                                  
+-a----        6/26/2022   5:39 PM              0 az104-07-file.txt                                                     
+-------------------------------------------------------------------------------------
+Naviage back to storage account / File Shares and refresh.... * Notice Directory and file exists *
+
+
+============================================================
+Task 6: Manage network access for Azure Storage
+============================================================
+Open Storage az104-07-sawfe / Networking 
+--Firewall and virtual Networks
+    Public network access
+    ---------------------
+    X   Enabled from all networks
+        Enabled from selected virtual networks and IP addresses
+        Disabled
+
+** Select 'Enabled from selected virtual networks and IP addresses
+--Check Add your client IP
+    Firewall
+    --------
+        Add IP ranges to allow access from the internet or your on-premises networks. Learn more.
+    X   Add your client IP address ('163.47.101.118')
+        Address range
+        IP address or CIDR
+    Resource instances
+    ------------------
+        Specify resource instances that will have access to your storage account based on their system-assigned managed identity.
+        Resource type
+        Instance name
+    Exceptions
+    ----------
+    X   Allow Azure services on the trusted services list to access this storage account.
+        Allow read access to storage logging from any network
+        Allow read access to storage metrics from any network
+    Network Routing
+    ---------------
+        ** Determine how you would like to route your traffic as it travels from its source to an Azure endpoint. Microsoft routing is recommended for most customers.
+        Routing preference
+        ------------------
+        X   Microsoft network routing
+            Internet routing
+        
+    Publish route-specific endpoints
+    --------------------------------
+        Microsoft network routing
+        Internet routing
+
+
+**SAVE**
+
+
+
+On Local Machine / Open PowerShell and Run:
+
+
+Invoke-WebRequest -URI https://az10407sawfe.blob.core.windows.net/az104-07-container/licenses/LICENSE?sp=r&st=2022-06-25T17:13:05Z&se=2022-06-28T01:13:05Z&spr=https&sv=2021-06-08&sr=b&sig=pygYFWoE7ywpl9eWzYDl1iCO2VGebiaWFlETiAskJII%3D

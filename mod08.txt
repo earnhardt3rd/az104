@@ -131,6 +131,36 @@ Locations         : {global}
 =======================================================================
 Task 5: Deploy Zone-Resilent Azure Virtual machine scale sets by using Azure Portal
 =======================================================================
+PS /home/frank> Get-AzPublicIpAddress -ResourceGroupName 'az104-08-rg2' -Name 'az10408vmss0-ip'
+
+Name                     : az10408vmss0-ip
+ResourceGroupName        : az104-08-rg2
+Location                 : eastus
+Id                       : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-08-rg2/providers/Microsoft.Network/publicIPAddresses/az10408vmss0-ip
+Etag                     : W/"86233d5d-83a5-40e5-9b15-a60d61580106"
+ResourceGuid             : b78be5e7-224a-44a3-b9fb-0e3ab62eca39
+ProvisioningState        : Succeeded
+Tags                     : 
+PublicIpAllocationMethod : Static
+IpAddress                : 20.127.18.11
+PublicIpAddressVersion   : IPv4
+IdleTimeoutInMinutes     : 4
+IpConfiguration          : {
+                             "Id": "/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-08-rg2/providers/Microsoft.Network/loadBalancers/az10408vmss0-lb/frontendIPConfiguratio
+                           ns/LoadBalancerFrontEnd"
+                           }
+DnsSettings              : null
+Zones                    : {}
+Sku                      : {
+                             "Name": "Standard",
+                             "Tier": "Regional"
+                           }
+IpTags                   : []
+ExtendedLocation         : null
+
+PS /home/frank> (Get-AzPublicIpAddress -ResourceGroupName 'az104-08-rg2' -Name 'az10408vmss0-ip').IpAddress
+20.127.18.11
+
 
 =======================================================================
 Task 6: Configure Azure Virtual machine sets by using virtual machine extensions
@@ -139,5 +169,8 @@ Task 6: Configure Azure Virtual machine sets by using virtual machine extensions
 =======================================================================
 Task 7: Scale compute and storage for Azure virtual machine scale sets (optional)
 =======================================================================
+
+
+
 
 

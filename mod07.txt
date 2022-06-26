@@ -1,0 +1,23 @@
+PS /home/frank> ./01-create-resourceGroup.ps1
+
+ResourceGroupName : az104-07-rg1
+Location          : eastus
+ProvisioningState : Succeeded
+Tags              : 
+ResourceId        : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-07-rg1
+
+
+
+PS /home/frank> ./02-deployTemplate.ps1
+
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
+2      Long Running O… AzureLongRunni… Running       True            localhost            New-AzResourceGroupDeplo…
+
+
+==========================================================
+Blob SAS Token:sp=r&st=2022-06-25T17:13:05Z&se=2022-06-28T01:13:05Z&spr=https&sv=2021-06-08&sr=b&sig=pygYFWoE7ywpl9eWzYDl1iCO2VGebiaWFlETiAskJII%3D
+
+
+Blob SAS URL:https://az10407sawfe.blob.core.windows.net/az104-07-container/licenses/LICENSE?sp=r&st=2022-06-25T17:13:05Z&se=2022-06-28T01:13:05Z&spr=https&sv=2021-06-08&sr=b&sig=pygYFWoE7ywpl9eWzYDl1iCO2VGebiaWFlETiAskJII%3D
+

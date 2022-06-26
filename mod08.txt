@@ -170,6 +170,194 @@ Task 6: Configure Azure Virtual machine sets by using virtual machine extensions
 Task 7: Scale compute and storage for Azure virtual machine scale sets (optional)
 =======================================================================
 
+PS /home/frank> ./az104-08-configure_VMSS_disks.ps1
+
+
+ResourceGroupName                           : az104-08-rg2
+Sku                                         : 
+  Name                                      : Standard_DS1_v2
+  Tier                                      : Standard
+  Capacity                                  : 2
+UpgradePolicy                               : 
+  Mode                                      : Manual
+ProvisioningState                           : Succeeded
+Overprovision                               : False
+DoNotRunExtensionsOnOverprovisionedVMs      : False
+UniqueId                                    : 9223846e-ca9e-421d-91ba-462608fdfd1b
+SinglePlacementGroup                        : False
+ZoneBalance                                 : False
+PlatformFaultDomainCount                    : 5
+ScaleInPolicy                               : 
+  Rules[0]                                  : Default
+Zones[0]                                    : 1
+Zones[1]                                    : 2
+Zones[2]                                    : 3
+Id                                          : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-08-rg2/providers/Microsoft.Compute/virtualMachineScaleSets/az10408vmss0
+Name                                        : az10408vmss0
+Type                                        : Microsoft.Compute/virtualMachineScaleSets
+Location                                    : eastus
+Tags                                        : {}
+VirtualMachineProfile                       : 
+  OsProfile                                 : 
+    ComputerNamePrefix                      : az10408vm
+    AdminUsername                           : Student
+    WindowsConfiguration                    : 
+      ProvisionVMAgent                      : True
+      EnableAutomaticUpdates                : True
+    AllowExtensionOperations                : True
+  StorageProfile                            : 
+    ImageReference                          : 
+      Publisher                             : MicrosoftWindowsServer
+      Offer                                 : WindowsServer
+      Sku                                   : 2019-datacenter-gensecond
+      Version                               : latest
+    OsDisk                                  : 
+      Caching                               : ReadWrite
+      WriteAcceleratorEnabled               : False
+      CreateOption                          : FromImage
+      DiskSizeGB                            : 127
+      OsType                                : Windows
+      ManagedDisk                           : 
+        StorageAccountType                  : Premium_LRS
+    DataDisks[0]                            : 
+      Lun                                   : 0
+      Caching                               : None
+      CreateOption                          : Empty
+      DiskSizeGB                            : 32
+      ManagedDisk                           : 
+        StorageAccountType                  : Standard_LRS
+  NetworkProfile                            : 
+    NetworkInterfaceConfigurations[0]       : 
+      Name                                  : az104-08-rg2-vnet-nic01
+      Primary                               : True
+      EnableAcceleratedNetworking           : True
+      NetworkSecurityGroup                  : 
+        Id                                  : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-08-rg2/providers/Microsoft.Network/networkSecurityGroups/az10408vmss0-nsg
+      DnsSettings                           : 
+      IpConfigurations[0]                   : 
+        Name                                : az104-08-rg2-vnet-nic01-defaultIpConfiguration
+        Subnet                              : 
+          Id                                : 
+/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-08-rg2/providers/Microsoft.Network/virtualNetworks/az104-08-rg2-vnet/subnets/subnet0
+        Primary                             : True
+        PublicIPAddressConfiguration        : 
+          Name                              : publicIp-az104-08-rg2-vnet-nic01
+          IdleTimeoutInMinutes              : 15
+          PublicIPAddressVersion            : IPv4
+        PrivateIPAddressVersion             : IPv4
+        LoadBalancerBackendAddressPools[0]  : 
+          Id                                : 
+/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-08-rg2/providers/Microsoft.Network/loadBalancers/az10408vmss0-lb/backendAddressPools/bepool
+        LoadBalancerInboundNatPools[0]      : 
+          Id                                : 
+/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-08-rg2/providers/Microsoft.Network/loadBalancers/az10408vmss0-lb/inboundNatPools/natpool
+      EnableIPForwarding                    : False
+  DiagnosticsProfile                        : 
+    BootDiagnostics                         : 
+      Enabled                               : True
+      StorageUri                            : https://az10408rg2diag762.blob.core.windows.net/
+  ExtensionProfile                          : 
+    Extensions[0]                           : 
+      Name                                  : customScript
+      Publisher                             : Microsoft.Compute
+      Type                                  : CustomScriptExtension
+      TypeHandlerVersion                    : 1.8
+      Settings                              : System.Collections.Hashtable
+
+
+ResourceGroupName                           : az104-08-rg2
+Sku                                         : 
+  Name                                      : Standard_DS1_v2
+  Tier                                      : Standard
+  Capacity                                  : 2
+UpgradePolicy                               : 
+  Mode                                      : Manual
+ProvisioningState                           : Succeeded
+Overprovision                               : False
+DoNotRunExtensionsOnOverprovisionedVMs      : False
+UniqueId                                    : 9223846e-ca9e-421d-91ba-462608fdfd1b
+SinglePlacementGroup                        : False
+ZoneBalance                                 : False
+PlatformFaultDomainCount                    : 5
+ScaleInPolicy                               : 
+  Rules[0]                                  : Default
+Zones[0]                                    : 1
+Zones[1]                                    : 2
+Zones[2]                                    : 3
+Id                                          : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-08-rg2/providers/Microsoft.Compute/virtualMachineScaleSets/az10408vmss0
+Name                                        : az10408vmss0
+Type                                        : Microsoft.Compute/virtualMachineScaleSets
+Location                                    : eastus
+Tags                                        : {}
+VirtualMachineProfile                       : 
+  OsProfile                                 : 
+    ComputerNamePrefix                      : az10408vm
+    AdminUsername                           : Student
+    WindowsConfiguration                    : 
+      ProvisionVMAgent                      : True
+      EnableAutomaticUpdates                : True
+    AllowExtensionOperations                : True
+  StorageProfile                            : 
+    ImageReference                          : 
+      Publisher                             : MicrosoftWindowsServer
+      Offer                                 : WindowsServer
+      Sku                                   : 2019-datacenter-gensecond
+      Version                               : latest
+    OsDisk                                  : 
+      Caching                               : ReadWrite
+      WriteAcceleratorEnabled               : False
+      CreateOption                          : FromImage
+      DiskSizeGB                            : 127
+      OsType                                : Windows
+      ManagedDisk                           : 
+        StorageAccountType                  : Premium_LRS
+    DataDisks[0]                            : 
+      Lun                                   : 0
+      Caching                               : None
+      CreateOption                          : Empty
+      DiskSizeGB                            : 32
+      ManagedDisk                           : 
+        StorageAccountType                  : Standard_LRS
+  NetworkProfile                            : 
+    NetworkInterfaceConfigurations[0]       : 
+      Name                                  : az104-08-rg2-vnet-nic01
+      Primary                               : True
+      EnableAcceleratedNetworking           : True
+      NetworkSecurityGroup                  : 
+        Id                                  : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-08-rg2/providers/Microsoft.Network/networkSecurityGroups/az10408vmss0-nsg
+      DnsSettings                           : 
+      IpConfigurations[0]                   : 
+        Name                                : az104-08-rg2-vnet-nic01-defaultIpConfiguration
+        Subnet                              : 
+          Id                                : 
+/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-08-rg2/providers/Microsoft.Network/virtualNetworks/az104-08-rg2-vnet/subnets/subnet0
+        Primary                             : True
+        PublicIPAddressConfiguration        : 
+          Name                              : publicIp-az104-08-rg2-vnet-nic01
+          IdleTimeoutInMinutes              : 15
+          PublicIPAddressVersion            : IPv4
+        PrivateIPAddressVersion             : IPv4
+        LoadBalancerBackendAddressPools[0]  : 
+          Id                                : 
+/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-08-rg2/providers/Microsoft.Network/loadBalancers/az10408vmss0-lb/backendAddressPools/bepool
+        LoadBalancerInboundNatPools[0]      : 
+          Id                                : 
+/subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-08-rg2/providers/Microsoft.Network/loadBalancers/az10408vmss0-lb/inboundNatPools/natpool
+      EnableIPForwarding                    : False
+  DiagnosticsProfile                        : 
+    BootDiagnostics                         : 
+      Enabled                               : True
+      StorageUri                            : https://az10408rg2diag762.blob.core.windows.net/
+  ExtensionProfile                          : 
+    Extensions[0]                           : 
+      Name                                  : customScript
+      Publisher                             : Microsoft.Compute
+      Type                                  : CustomScriptExtension
+      TypeHandlerVersion                    : 1.8
+      AutoUpgradeMinorVersion               : False
+      Settings                              : {"commandToExecute":"powershell -ExecutionPolicy Unrestricted -File 
+prepare_vm_disks.ps1","fileUris":["https://raw.githubusercontent.com/Azure-Samples/compute-automation-configurations/master/prepare_vm_disks.ps1"]}
+
 
 
 

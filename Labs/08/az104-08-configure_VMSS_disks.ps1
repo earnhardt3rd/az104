@@ -1,4 +1,4 @@
-$rgName = 'az104-08-rg02'
+$rgName = 'az104-08-rg2'
 $vmssName = 'az10408vmss0'
 $vmss = Get-AzVmss `
 	-ResourceGroupName $rgName `

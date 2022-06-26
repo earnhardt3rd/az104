@@ -134,7 +134,8 @@ Open Storage az104-07-sawfe / Networking
 
 
 
-On Local Machine / Open PowerShell and Run:
+~ Result: Can only open file from specific IP: 163.47.101.118
 
+https://az10407sawfe.blob.core.windows.net/az104-07-container/licenses/LICENSE?sp=r&st=2022-06-25T17:13:05Z&se=2022-06-28T01:13:05Z&spr=https&sv=2021-06-08&sr=b&sig=pygYFWoE7ywpl9eWzYDl1iCO2VGebiaWFlETiAskJII%3D
 
-Invoke-WebRequest -URI https://az10407sawfe.blob.core.windows.net/az104-07-container/licenses/LICENSE?sp=r&st=2022-06-25T17:13:05Z&se=2022-06-28T01:13:05Z&spr=https&sv=2021-06-08&sr=b&sig=pygYFWoE7ywpl9eWzYDl1iCO2VGebiaWFlETiAskJII%3D
+** On MacBookPro - It was working and now I'm getting AuthorizationFailure

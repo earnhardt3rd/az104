@@ -362,3 +362,29 @@ prepare_vm_disks.ps1","fileUris":["https://raw.githubusercontent.com/Azure-Sampl
 
 
 
+-----------------------------------------------------------------------------
+PS /home/frank> az account list
+[
+  {
+    "cloudName": "AzureCloud",
+    "homeTenantId": "f1c58bee-b6cb-4146-b751-b4d69e35780b",
+    "id": "b10fbc3d-9183-45a5-9ea5-54734bfd3ba7",
+    "isDefault": true,
+    "managedByTenants": [],
+    "name": "Azure Pass - Sponsorship",
+    "state": "Enabled",
+    "tenantId": "f1c58bee-b6cb-4146-b751-b4d69e35780b",
+    "user": {
+      "cloudShellID": true,
+      "name": "live.com#az104-earnhardt@outlook.com",
+      "type": "user"
+    }
+  }
+]
+PS /home/frank> 
+------------------------------------------------------------------------------
+
+
+https://docs.microsoft.com/en-us/azure/virtual-machines/windows/hybrid-use-benefit-licensing?WT.mc_id=Portal-Microsoft_Azure_Compute
+https://docs.microsoft.com/en-us/azure/azure-resource-manager/
+https://docs.microsoft.com/en-us/azure/virtual-machines/shared-image-galleries?tabs=azure-cli

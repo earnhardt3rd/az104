@@ -1,0 +1,143 @@
+PS /home/frank> ./01-create-resourceGroup.ps1
+
+ResourceGroupName : az104-08-rg1
+Location          : eastus
+ProvisioningState : Succeeded
+Tags              : 
+ResourceId        : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-08-rg1
+
+=======================================================================
+Task 1: Deploy Zone-Resilent Azure Virtual machines by using Azure Portal and Resource Manager Template
+=======================================================================
+** Save up to 49% with a license you already own using Azure Hybrid Benefit.
+** https://docs.microsoft.com/en-us/azure/virtual-machines/windows/hybrid-use-benefit-licensing?WT.mc_id=Portal-Microsoft_Azure_Compute
+
+=======================================================================
+Task 2: Configure Azure virtual machines by using virtual machine extensions
+=======================================================================
+
+=======================================================================
+Task 3: Scale compute and storage for Azure virtual machines
+=======================================================================
+New-StoragePool -FriendlyName storagepool1 -StorageSubsystemFriendlyName "Windows Storage*" -PhysicalDisks (Get-PhysicalDisk -CanPool $true)
+ New-VirtualDisk -StoragePoolFriendlyName storagepool1 -FriendlyName virtualdisk1 -Size 2046GB -ResiliencySettingName Simple -ProvisioningType Fixed
+ Initialize-Disk -VirtualDisk (Get-VirtualDisk -FriendlyName virtualdisk1)
+ New-Partition -DiskNumber 4 -UseMaximumSize -DriveLetter Z
+
+ -------------------------------------------------------------------------
+ FriendlyName OperationalStatus HealthStatus IsPrimordial IsReadOnly Size AllocatedSize
+------------ ----------------- ------------ ------------ ---------- ---- -------------
+storagepool1 OK                Healthy      False        False      2 TB        512 MB
+
+ObjectId                          : {1}\\az104-08-vm0\root/Microsoft/Windows/Storage/Providers_v2\SPACES_VirtualDisk.Ob
+                                    jectId="{01f8534b-f56b-11ec-95d6-806e6f6e6963}:VD:{376c285d-0739-47e4-93ca-a681586c
+                                    8c3e}{6112db72-9f62-4619-91b2-67e8eae8ecef}"
+PassThroughClass                  : 
+PassThroughIds                    : 
+PassThroughNamespace              : 
+PassThroughServer                 : 
+UniqueId                          : 72DB1261629F194691B267E8EAE8ECEF
+Access                            : Read/Write
+AllocatedSize                     : 2196875771904
+AllocationUnitSize                : 1073741824
+ColumnIsolation                   : PhysicalDisk
+DetachedReason                    : None
+FaultDomainAwareness              : PhysicalDisk
+FootprintOnPool                   : 2196875771904
+FriendlyName                      : virtualdisk1
+HealthStatus                      : Healthy
+Interleave                        : 262144
+IsDeduplicationEnabled            : False
+IsEnclosureAware                  : False
+IsManualAttach                    : False
+IsSnapshot                        : False
+IsTiered                          : False
+LogicalSectorSize                 : 512
+MediaType                         : Unspecified
+Name                              : 
+NameFormat                        : 
+NumberOfAvailableCopies           : 
+NumberOfColumns                   : 2
+NumberOfDataCopies                : 1
+NumberOfGroups                    : 1
+OperationalStatus                 : OK
+OtherOperationalStatusDescription : 
+OtherUsageDescription             : 
+ParityLayout                      : 
+PhysicalDiskRedundancy            : 0
+PhysicalSectorSize                : 4096
+ProvisioningType                  : Fixed
+ReadCacheSize                     : 0
+RequestNoSinglePointOfFailure     : False
+ResiliencySettingName             : Simple
+Size                              : 2196875771904
+UniqueIdFormat                    : Vendor Specific
+UniqueIdFormatDescription         : 
+Usage                             : Data
+WriteCacheSize                    : 0
+PSComputerName                    : 
+
+
+ObjectId             : {1}\\az104-08-vm0\root/Microsoft/Windows/Storage/Providers_v2\WSP_Partition.ObjectId="{01f8534b-
+                       f56b-11ec-95d6-806e6f6e6963}:PR:{00000000-0000-0000-0000-000100000000}\\?\storage#disk#{6112db72
+                       -9f62-4619-91b2-67e8eae8ecef}#{53f56307-b6bf-11d0-94f2-00a0c91efb8b}"
+PassThroughClass     : 
+PassThroughIds       : 
+PassThroughNamespace : 
+PassThroughServer    : 
+UniqueId             : {00000000-0000-0000-0000-000100000000}72DB1261629F194691B267E8EAE8ECEF
+AccessPaths          : {Z:\, \\?\Volume{f5672450-31ec-49c2-8999-1fdeabfbe097}\}
+DiskId               : \\?\storage#disk#{6112db72-9f62-4619-91b2-67e8eae8ecef}#{53f56307-b6bf-11d0-94f2-00a0c91efb8b}
+DiskNumber           : 4
+DriveLetter          : Z
+GptType              : {ebd0a0a2-b9e5-4433-87c0-68b6b72699c7}
+Guid                 : {f5672450-31ec-49c2-8999-1fdeabfbe097}
+IsActive             : False
+IsBoot               : False
+IsDAX                : False
+IsHidden             : False
+IsOffline            : False
+IsReadOnly           : False
+IsShadowCopy         : False
+IsSystem             : False
+MbrType              : 
+NoDefaultDriveLetter : False
+Offset               : 16777216
+OperationalStatus    : Online
+PartitionNumber      : 2
+Size                 : 2196857946112
+TransitionState      : 1
+PSComputerName       : 
+Type                 : Basic
+DiskPath             : \\?\storage#disk#{6112db72-9f62-4619-91b2-67e8eae8ecef}#{53f56307-b6bf-11d0-94f2-00a0c91efb8b}
+
+
+
+=======================================================================
+Task 4: Register the Microsoft.Insights and Microsoft.AlertsMAnagement resource providers
+=======================================================================
+PS /home/frank> ./02-registerProviders.ps1
+
+ProviderNamespace : microsoft.insights
+RegistrationState : Registered
+ResourceTypes     : {components, components/query, components/metadata, components/metrics…}
+Locations         : {East US, South Central US, North Europe, West Europe…}
+
+ProviderNamespace : Microsoft.AlertsManagement
+RegistrationState : Registered
+ResourceTypes     : {alerts, alertsSummary, smartGroups, smartDetectorAlertRules…}
+Locations         : {global}
+
+=======================================================================
+Task 5: Deploy Zone-Resilent Azure Virtual machine scale sets by using Azure Portal
+=======================================================================
+
+=======================================================================
+Task 6: Configure Azure Virtual machine sets by using virtual machine extensions
+=======================================================================
+
+=======================================================================
+Task 7: Scale compute and storage for Azure virtual machine scale sets (optional)
+=======================================================================
+
+

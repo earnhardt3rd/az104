@@ -53,3 +53,39 @@ Task 5: Swap the staging slots
 ==============================================
 Task 6: Configure and test autoscaling of the Azure web app
 ==============================================
+
+
+
+
+PS /home/frank/php-docs-hello-world> git add .      
+PS /home/frank/php-docs-hello-world> git commit -mTEST
+[master e6fb98f] TEST
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+PS /home/frank/php-docs-hello-world> git push az104-earnhardt master
+Username for 'https://az104-09-webapp-wfe-staging.scm.azurewebsites.net:443': az104-earnhardt
+Password for 'https://az104-earnhardt@az104-09-webapp-wfe-staging.scm.azurewebsites.net:443': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 363 bytes | 363.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Updating branch 'master'.
+remote: Updating submodules.
+remote: Preparing deployment for commit id 'e6fb98f78e'.
+remote: Generating deployment script.
+remote: Running deployment command...
+remote: Handling Basic Web Site deployment.
+remote: Creating app_offline.htm
+remote: KuduSync.NET from: 'C:\home\site\repository' to: 'C:\home\site\wwwroot'
+remote: Copying file: 'index.php'
+remote: Deleting app_offline.htm
+remote: Finished successfully.
+remote: Running post deployment command(s)...
+remote: Triggering recycle (preview mode disabled).
+remote: Deployment successful.
+To https://az104-09-webapp-wfe-staging.scm.azurewebsites.net:443/az104-09-webapp-wfe.git
+   17b910b..e6fb98f  master -> master
+PS /home/frank/php-docs-hello-world> 
+
+

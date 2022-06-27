@@ -1,10 +1,23 @@
 QGE47M2TJDMVOUXCKC
 
+PS /home/frank> ./01-create-resourceGroup.ps1
+
+ResourceGroupName : az104-09-rg1
+Location          : eastus
+ProvisioningState : Succeeded
+Tags              : 
+ResourceId        : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-09-rg1
 
 ==============================================
 Task 1: Create an Azure web app
 ==============================================
-
+Web App Types:
+    Code:.Net, ASP, PHP, Node, Java, Python, Ruby
+    Docker Container:Linux, Windows
+    Static Web App:
+    Web App + Database: https://portal.azure.com/#create/Microsoft.AppServiceWebAppDatabaseV3
+    
+** App Service Plan Pricing ** : https://azure.microsoft.com/en-us/pricing/details/app-service/windows/
 ==============================================
 Task 2: Create a staging deployment slot
 ==============================================

@@ -1,0 +1,52 @@
+===============================================================
+Task 1: Deploy a Docker Image by using the Azure Container Instance
+===============================================================
+https://github.com/Azure-Samples/aci-helloworld
+
+
+az104-09b-c1-wfe.eastus.azurecontainer.io
+
+===============================================================
+Task 2: Review the functionally
+===============================================================
+
+
+
+# Microsoft Artifact Registry
+https://mcr.microsoft.com/en-us/
+
+
+
+
+
+
+docker pull mcr.microsoft.com/azure-cli
+Usage
+docker run -it mcr.microsoft.com/azure-cli:latest
+
+https://microsoft.com/devicelogin
+
+
+https://docs.microsoft.com/en-us/cli/azure/run-azure-cli-docker?view=azure-cli-latest
+
+
+
+
+Container: az104-09b-c2
+
+
+Registry: Other
+earnahrdt/vir_report:version1.0
+
+OS:Linux
+
+DNS: az104-09b-c2-virpt
+
+Container URL: az104-09b-c2-virpt.eastus.azurecontainer.io
+
+
+
+Storage Account:cs710032001db4df1f5
+KEY1:kT+qpmZW93cfnqGt4NoVUg8V+4cfHrcpIH1m1C10LnrUYfds21cUoUkfgVOi1Y9ZAcdR3beBnXZP+AStPYfEDA==
+ENDP:DefaultEndpointsProtocol=https;AccountName=cs710032001db4df1f5;AccountKey=kT+qpmZW93cfnqGt4NoVUg8V+4cfHrcpIH1m1C10LnrUYfds21cUoUkfgVOi1Y9ZAcdR3beBnXZP+AStPYfEDA==;EndpointSuffix=core.windows.net
+

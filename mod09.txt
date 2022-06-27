@@ -16,8 +16,24 @@ Web App Types:
     Docker Container:Linux, Windows
     Static Web App:
     Web App + Database: https://portal.azure.com/#create/Microsoft.AppServiceWebAppDatabaseV3
-    
+
 ** App Service Plan Pricing ** : https://azure.microsoft.com/en-us/pricing/details/app-service/windows/
+
+PROD:
+ftps://waws-prod-blu-315.ftp.azurewebsites.windows.net/site/wwwroot
+git clone https://az104-09-webapp-wfe.scm.azurewebsites.net:443/az104-09-webapp-wfe.git
+--USR:az104-earnhardt
+--PWD:<standard>
+
+STAGING Repo:
+ftps://waws-prod-blu-315.ftp.azurewebsites.windows.net/site/wwwroot
+git clone https://az104-09-webapp-wfe-staging.scm.azurewebsites.net:443/az104-09-webapp-wfe.git
+--USR:az104-earnhardt
+--PWD:<standard>
+
+URL: https://az104-09-webapp-wfe.azurewebsites.net
+URL: https://az104-09-webapp-wfe-staging.azurewebsites.net
+
 ==============================================
 Task 2: Create a staging deployment slot
 ==============================================

@@ -1,0 +1,38 @@
+QGE47M2TJDMVOUXCKC
+Admin
+Pa55w.rd
+=====================================================================
+Task 1: Provision Lab
+========================================================================
+PS /home/frank> ./01-create-resourceGroup.ps1
+
+ResourceGroupName : az104-10-rg0
+Location          : eastus
+ProvisioningState : Succeeded
+Tags              : 
+ResourceId        : /subscriptions/b10fbc3d-9183-45a5-9ea5-54734bfd3ba7/resourceGroups/az104-10-rg0
+
+PS /home/frank> ./02-deployTemplate.ps1
+
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
+2      Long Running O… AzureLongRunni… Running       True            localhost            New-AzResourceGroupDeplo…
+
+========================================================================
+Task 2: Create Recovery Services Vault
+========================================================================
+Azure Pass - Sponsorship
+b10fbc3d-9183-45a5-9ea5-54734bfd3ba7
+az104-10-rg1
+-------------------------------------
+Backup Configuration:
+This option cannot be changed after protecting items. Geo-Redundant Storage (GRS) provides a higher level of data availability than Zonal-Redundant Storage and Local-Redundant Storage. Zonal -Redundant Storage helps to replicate the data in the availability zones of the same region. Review the trade-offs between lower cost and higher cost availability here.
+-------------------------------------
+Security Settings:
+If you have enabled Azure multi-factor authentication , you will be required to additionally authenticate using another device (for example, a mobile phone) while signing in to the Azure portal.
+--Soft Delete:
+Soft Delete (For workloads running in Azure)
+Enable this setting to protect backup data for Azure VM, SQL Server in Azure VM and SAP HANA in Azure VM from accidental deletes.
+--Security Features:
+Security Features (For workloads running on-premises)
+Enable this setting to protect hybrid backups against accidental deletes and add additional layer of authentication for critical operations. Refer this link for minimum agent version requirement to enable this setting.

@@ -36,3 +36,13 @@ Enable this setting to protect backup data for Azure VM, SQL Server in Azure VM 
 --Security Features:
 Security Features (For workloads running on-premises)
 Enable this setting to protect hybrid backups against accidental deletes and add additional layer of authentication for critical operations. Refer this link for minimum agent version requirement to enable this setting.
+========================================================================
+Task 3: Implement Azure Virtual Machine-Level Backup
+========================================================================
+Azure Backup service creates a separate resource group to store the instant recovery points of managed virtual machines. The default naming format of resource group created by Azure Backup service is AzureBackupRG_{Geo}_{n}. It is optional to customize the name as per your requirement.
+
+========================================================================
+Task 4: Implement File and Folder Backup
+========================================================================
+
+
